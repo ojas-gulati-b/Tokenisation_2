@@ -1,0 +1,309 @@
+.tkn-header .tkn.top-nav .mobile-user-info .user-menu.tkn .caret {
+  position: relative;
+  top: -5px;
+}
+.tkn-manage-limits-screen {
+  /* For Mobile screens*/
+}
+.tkn-manage-limits-screen .sm-visible .tkn-manage-limits-header .back-button {
+  left: 20px;
+}
+.tkn-manage-limits-screen .sm-visible .tkn-spends-section .tabs-header {
+  border-bottom: 1px solid #f2f2fd;
+}
+.tkn-manage-limits-screen .sm-visible .tkn-spends-section .tabs-header .tabs {
+  padding: 0;
+}
+.tkn-manage-limits-screen .sm-visible .tkn-spends-section .tabs-header .tabs .tab:not(:first-child) {
+  margin-right: 0;
+}
+.tkn-manage-limits-screen .sm-visible .tkn-spends-section .tabs-body {
+  padding: 0;
+}
+.tkn-manage-limits-screen .sm-visible .tkn-spends-section .tabs-body .content-wrapper {
+  padding: 0;
+}
+.tkn-manage-limits-screen .sm-visible .tkn-spends-section .tabs-body .content-wrapper .sbi-button-group {
+  padding: 0 20px;
+}
+.tkn-manage-limits-screen .sm-visible .tkn-spends-section .tabs-body .content-wrapper .sbi-button-group .sbi-link {
+  margin-top: 40px;
+}
+.tkn-manage-limits-screen .tkn-manage-limits-header {
+  padding: 30px 50px 30px 25px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .tkn-manage-limits-screen .tkn-manage-limits-header {
+    padding: 30px 20px 25px 15px;
+  }
+}
+.tkn-manage-limits-screen .tkn-manage-limits-header .main-text span {
+  font-size: 24px;
+  font-weight: 600;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-header {
+  background-color: #ffffff;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs {
+  display: flex;
+  padding: 0 50px 0 25px;
+  height: 30px;
+  border-bottom: 1px solid #dddddd;
+}
+@media (max-width: 767px) {
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs {
+    padding: 0px 20px 0px 15px;
+  }
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab {
+  padding-bottom: 10px;
+  font-size: 14px;
+  color: #333333;
+  font-weight: 400;
+  cursor: pointer;
+  text-align: center;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab:hover {
+  border-bottom: 4px solid #0095d9;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab:hover span {
+  font-weight: 600;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab.active {
+  border-bottom: 4px solid #0095d9;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab.active span {
+  font-weight: 600;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab:first-child {
+  margin-right: 43px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content {
+  display: none;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.active {
+  display: block;
+  /* z-index: 2;
+                                 opacity: 1;
+                                 transform: translateX(0);
+                                 transition: transform 0.3s; */
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section {
+  background-color: #ffffff;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section.all-digital .heading-text span {
+  font-size: 16px;
+  font-weight: 600;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .switch {
+  position: relative;
+  display: inline-block;
+  width: 58px;
+  height: 28px;
+  margin-bottom: 0;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  /* &:focus + .slider {
+                                             box-shadow: 0 0 1px #000000;
+                                         } */
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .switch input:checked + .slider {
+  background-color: #0095d9;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .switch input:checked + .slider:before {
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 32px;
+  width: 32px;
+  left: 0px;
+  bottom: -2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 #d5d5ea;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section {
+  padding: 30px 50px 30px 25px;
+}
+@media (max-width: 767px) {
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section {
+    padding: 30px 20px 30px 20px;
+  }
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section {
+    padding-left: 20px !important;
+  }
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section .limit-slider {
+    margin-left: -25px;
+    margin-right: -5px;
+  }
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section .disclaimer {
+    margin-left: -20px;
+  }
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section {
+  padding-left: 25px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section .heading-text {
+  height: 32px;
+  line-height: 32px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .heading-text {
+  height: 32px;
+  line-height: 32px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .heading-text span {
+  font-size: 16px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-text {
+  margin-top: 5px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-text span {
+  font-size: 14px;
+  color: #666666;
+}
+@media (max-width: 767px) {
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-text {
+    margin-top: 20px;
+  }
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .input-label {
+  width: 160px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .input-label span {
+  font-size: 12px;
+  color: #666666;
+  font-weight: 600;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .input-label .info {
+  margin-left: 5px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .limit {
+  margin-left: 15px;
+  align-items: center;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .limit .rupee {
+  height: 12px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .limit .value {
+  width: 100px;
+  margin-left: 5px;
+  text-align: left;
+  box-sizing: border-box;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .limit .value.input {
+  margin-left: 0;
+  height: 38px;
+  border: 1px solid #e6e6e6;
+  line-height: 38px;
+  padding: 0 10px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .limit .value.input:focus {
+  outline-color: #0095d9;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .limit .value.input .rupee {
+  font-size: 12px;
+  color: #333333;
+  font-weight: 400;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .limit .value span {
+  font-size: 12px;
+  font-weight: 600;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .limit .value input[type="text"] {
+  margin-left: 5px;
+  border: none;
+  vertical-align: middle;
+  outline: none;
+  height: 17px;
+  line-height: 17px;
+  padding: 0;
+  color: #333333;
+  font-weight: 400;
+  background: #ffffff;
+  width: 66px;
+  /* &:focus{
+                                                         outline-color: #0095d9;
+                                                     } */
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .limit .value input[type="text"]:invalid {
+  outline-color: salmon;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .limit-slider {
+  margin-bottom: 40px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section.limit-count .set-limit .limit .value {
+  width: 100px;
+  margin-left: 5px;
+  text-align: left;
+  box-sizing: border-box;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section.limit-count .set-limit .limit .value.input {
+  margin-left: 0;
+  height: 38px;
+  border: 1px solid #e6e6e6;
+  line-height: 38px;
+  padding: 0 10px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section.limit-count .set-limit .limit .value span {
+  font-size: 12px;
+  font-weight: 600;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section.limit-count .set-limit .limit .value input[type="text"] {
+  margin-left: 5px;
+  border: none;
+  vertical-align: middle;
+  outline: none;
+  height: 17px;
+  line-height: 17px;
+  padding: 0;
+  color: #333333;
+  font-weight: 400;
+  background: #ffffff;
+  width: 66px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section.limit-count .set-limit .limit .value input[type="text"]:focus {
+  outline-color: #0095d9;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section.limit-count .set-limit .limit .value input[type="text"]:invalid {
+  outline-color: salmon;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content .disclaimer {
+  padding: 20px;
+  background-color: #f2f9fc;
+  border: solid 1px #dcecf3;
+  line-height: 1;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content .disclaimer span {
+  color: #7f7f7f;
+  font-size: 12px;
+  font-weight: normal;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .tkn-button-group {
+  padding: 0 50px 0 25px;
+}
+@media (max-width: 767px) {
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .tkn-button-group {
+    padding: 0 30px;
+  }
+}

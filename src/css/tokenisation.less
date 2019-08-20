@@ -1,0 +1,375 @@
+.tkn-header{
+    .tkn.top-nav{
+        .mobile-user-info{
+            .user-menu.tkn{
+                .caret{
+                    position: relative;
+                    top: -5px;
+                }
+            }
+        }
+    }
+}
+
+.tkn-manage-limits-screen{
+    &{
+        /* For Mobile screens*/
+        .sm-visible{
+             .tkn-manage-limits-header{
+                 .back-button{
+                     left: 20px
+                 }
+             }
+             .tkn-spends-section{
+                 .tabs-header{
+                     border-bottom: 1px solid #f2f2fd;
+                     .tabs{
+                         padding: 0;
+                         .tab:not(:first-child){
+                             margin-right: 0;
+                         }
+                     }
+                 }
+                 .tabs-body{
+                     padding: 0;
+                     .content-wrapper{
+                         padding: 0;
+
+                         .sbi-button-group{
+                             padding: 0 20px;
+                             .sbi-link{
+                                 margin-top: 40px;
+                             }
+                         }
+                     }
+                 }
+             }
+        }
+    }
+    //background-color: #f5f5f5;
+    .tkn-manage-limits-header{
+        padding: 30px 50px 30px 25px;
+        @media (max-width: 767px) {
+            padding: 30px 20px 25px 15px;
+        }
+        
+        position: relative;
+        .main-text{
+            span{
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+    }
+    .tkn-spends-section{
+        //height: calc(100vh - 162px);
+        //background-color: #f5f5f5;
+        .tabs-header{
+            background-color: #ffffff;
+            
+            .tkn-tabs{
+             //padding: 0 80px;
+             display: flex;
+             padding: 0 50px 0 25px;
+             height: 30px;
+             border-bottom: 1px solid #dddddd;
+
+             @media (max-width: 767px) {
+                padding: 0px 20px 0px 15px;
+            }
+                 .tkn-tab{
+                     //width: 130px;
+                     padding-bottom: 10px;
+                     font-size: 14px;
+                     color: #333333;
+                     font-weight: 400;
+                     cursor: pointer;
+                     text-align: center;
+
+                     &:hover{
+                         span{
+                            font-weight: 600;
+                         }
+                         border-bottom: 4px solid #0095d9;
+                     }
+
+                     &.active{
+                        span{
+                            font-weight: 600;
+                         }
+                         border-bottom: 4px solid #0095d9;
+                     }
+                     &:first-child{
+                         margin-right: 43px;
+                     }
+                 }
+            }
+        }
+        .tabs-body{
+             //background-color: #f5f5f5;
+             //padding: 40px 0px;
+             
+             //.sbi-wrapper{
+                 .content-wrapper{
+                     //padding: 0 80px;
+                     
+                     .tab-content{
+                         .content{
+                             display: none;
+                             &.active{
+                                 display: block;
+                                 /* z-index: 2;
+                                 opacity: 1;
+                                 transform: translateX(0);
+                                 transition: transform 0.3s; */
+                             }
+
+                             section{
+                                 background-color: #ffffff;
+                                 &.all-digital{
+                                     .heading-text{
+                                        span{
+                                            font-size: 16px;
+                                            font-weight: 600;
+                                        }
+                                     }
+                                 }
+
+                                 .switch{
+                                     position: relative;
+                                     display: inline-block;
+                                     width: 58px;
+                                     height: 28px;
+                                     margin-bottom: 0;
+
+                                     input{ 
+                                         opacity: 0;
+                                         width: 0;
+                                         height: 0;
+
+                                         &:checked + .slider {
+                                             background-color: #0095d9;
+                                         }
+                                          /* &:focus + .slider {
+                                             box-shadow: 0 0 1px #000000;
+                                         } */
+                                         &:checked + .slider:before {
+                                             -ms-transform: translateX(26px);
+                                             transform: translateX(26px);
+                                         }
+                                       }
+                                     .slider{
+                                         position: absolute;
+                                         cursor: pointer;
+                                         top: 0;
+                                         left: 0;
+                                         right: 0;
+                                         bottom: 0;
+                                         background-color: #ccc;
+                                         -webkit-transition: .4s;
+                                         transition: .4s;
+                                         border-radius: 30px;
+
+                                         &:before{
+                                             position: absolute;
+                                             content: "";
+                                             height: 32px;
+                                             width: 32px;
+                                             left: 0px;
+                                             bottom: -2px;
+                                             background-color: white;
+                                             -webkit-transition: .4s;
+                                             transition: .4s;
+                                             border-radius: 50%;
+                                             box-shadow: 0 0 5px 0 #d5d5ea;
+                                         }
+                                     }
+                                       
+                                 }
+                                 .toggle-section{
+                                    padding: 30px 50px 30px 25px;
+
+                                    @media (max-width: 767px) {
+                                        padding: 30px 20px 30px 20px;
+                                        .sub-toggle-section{
+                                            padding-left: 20px !important;
+
+                                            .limit-slider{
+                                                margin-left: -25px; // to counter parent padding
+                                                margin-right: -5px; // to counter parent padding
+                                            }
+                                            .disclaimer{
+                                                margin-left: -20px // to counter parent padding
+                                            }
+                                        }
+                                    }
+
+                                    .sub-toggle-section{
+                                        padding-left: 25px;
+                                        .heading-text{
+                                            height: 32px;
+                                            line-height: 32px;
+                                        }
+                                    }
+
+                                     .heading-text{
+                                         height: 32px;
+                                         line-height: 32px;
+                                        span{
+                                            font-size: 16px;
+                                            //font-weight: 600;
+                                        }
+                                     }
+                                     .sub-text{
+                                         span{
+                                             font-size: 14px;
+                                            color: #666666;
+                                         }
+                                         margin-top: 5px;
+                                         @media (max-width: 767px) {
+                                             margin-top: 20px;
+                                         }
+                                     }
+                                     .set-limit{
+                                         .input-label{
+                                             width: 160px;
+                                             span{
+                                                font-size: 12px;
+                                                color: #666666;
+                                                font-weight: 600;
+                                             }
+                                             .info{
+                                                 margin-left: 5px;
+                                             }
+                                         }
+                                         .limit{
+                                             margin-left: 15px;
+                                             align-items: center;
+                                             .rupee{
+                                                 //width: 8px;
+                                                 height: 12px;
+                                             }
+                                             .value{
+                                                 width: 100px;
+                                                 margin-left: 5px;
+                                                 text-align: left;
+                                                 box-sizing: border-box;
+                                                 
+                                                 &.input{
+                                                     margin-left: 0;
+                                                     height: 38px;
+                                                     border: 1px solid #e6e6e6;
+                                                     line-height: 38px;
+                                                     padding: 0 10px;
+                                                     &:focus{
+                                                        outline-color: #0095d9;
+                                                    }
+                                                    .rupee{
+                                                        font-size: 12px;
+                                                        color: #333333;
+                                                        font-weight: 400;
+                                                    }
+                                                 }
+                                                 span{
+                                                    font-size: 12px;
+                                                    font-weight: 600;
+                                                 }
+                                                 input[type="text"]{
+                                                     //box-shadow: 0px 0px 3px #d5d5ea;
+                                                     margin-left: 5px;
+                                                     border: none;
+                                                     vertical-align: middle;
+                                                     outline: none;
+                                                     height: 17px;
+                                                     line-height: 17px;
+                                                     padding: 0;
+                                                     color: #333333;
+                                                     font-weight: 400;
+                                                     background: #ffffff;
+                                                     width: 66px;
+
+                                                     /* &:focus{
+                                                         outline-color: #0095d9;
+                                                     } */
+                                                     &:invalid{
+                                                         outline-color: salmon;
+                                                     }
+                                                 }
+                                             }
+                                         }
+                                     }
+                                     .limit-slider{
+                                         margin-bottom: 40px;
+                                     }
+
+                                     &.limit-count{
+                                        .set-limit{
+                                            .limit{
+                                                .value{
+                                                    width: 100px;
+                                                    margin-left: 5px;
+                                                    text-align: left;
+                                                    box-sizing: border-box;
+                                                    
+                                                    &.input{
+                                                        margin-left: 0;
+                                                        height: 38px;
+                                                        border: 1px solid #e6e6e6;
+                                                        line-height: 38px;
+                                                        padding: 0 10px;
+                                                    }
+                                                    span{
+                                                        font-size: 12px;
+                                                        font-weight: 600;
+                                                    }
+                                                    input[type="text"]{
+                                                        //box-shadow: 0px 0px 3px #d5d5ea;
+                                                        margin-left: 5px;
+                                                        border: none;
+                                                        vertical-align: middle;
+                                                        outline: none;
+                                                        height: 17px;
+                                                        line-height: 17px;
+                                                        padding: 0;
+                                                        color: #333333;
+                                                        font-weight: 400;
+                                                        background: #ffffff;
+                                                        width: 66px;
+                                                     &:focus{
+                                                         outline-color: #0095d9;
+                                                     }
+                                                     &:invalid{
+                                                         outline-color: salmon;
+                                                     }
+                                                 }
+                                                }
+                                            }
+                                        } 
+                                     }
+                                 } 
+                             }
+                             .disclaimer{
+                                 padding: 20px;
+                                 background-color: #f2f9fc;
+                                 border: solid 1px #dcecf3;
+                                 line-height: 1;
+                                 span{
+                                     color: #7f7f7f;
+                                     font-size: 12px;
+                                     font-weight: normal;
+                                 }
+                             }
+                         }
+
+                         .tkn-button-group{
+                             padding: 0 50px 0 25px;
+                             @media (max-width: 767px) {
+                                padding: 0 30px;
+                            }
+                         }
+                     }
+                 }
+             //}
+        }
+    }
+}
