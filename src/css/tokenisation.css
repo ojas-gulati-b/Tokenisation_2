@@ -158,6 +158,7 @@
     margin-right: -5px;
   }
   .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section .disclaimer {
+    padding: 10px;
     margin-left: -20px;
   }
 }
