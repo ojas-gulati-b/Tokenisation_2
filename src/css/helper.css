@@ -1,6 +1,5 @@
 .tab-menu.tkn{
-    margin-top: 6px;
-    
+    /* margin-top: 6px; */
 }
 .tab-menu.tkn > .active >a{
     background: #444444;
@@ -36,7 +35,7 @@
     padding: 10px 20px; 
     display: flex;
     align-items: center;
-    background: #444444;
+    /* background: #444444; */
 }
 /* menu overrides ends  */
 .important-notes{
@@ -98,6 +97,7 @@
     margin-right: 20px;
 }
 .tkn-button{
+    display: block;
     font-size: 14px;
     background: #0095d9;
     padding: 8px 18px;

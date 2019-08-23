@@ -1,0 +1,147 @@
+.tkn-select-card{
+    padding: 30px 50px;
+    @media (max-width: 860px) {
+        padding: 30px 15px 25px 15px;
+    }
+    .heading{
+        span{
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+    .tkn-card-selection-section{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @media (max-width: 860px) {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .tkn-card-selection-label{
+            
+            span{
+                font-size: 13px;
+                font-weight: 600;
+            }
+        }
+            
+        .tkn-card-selection-dd{
+            margin-left: 60px;
+            max-width: 450px;
+            min-width: 290px;
+            width: 100%;
+            @media (max-width: 860px) {
+                margin-left: 0px !important;
+                margin-top: 15px;
+            }
+
+            .tkn-dropdown{
+                span{
+                    font-size: 12px;
+                    font-weight: 600;
+                    text-transform: none;
+                }
+            }
+        }
+    }
+}
+.tkn-limits-container{
+    padding: 30px 50px 40px 50px;
+    @media (max-width: 860px) {
+        padding: 30px 15px 0px 15px;
+    }
+
+    .tkn-limit-box-row{
+        display: flex;
+        flex-direction: row;
+        @media (max-width: 860px) {
+            flex-direction: column;
+            //margin: 0 auto;
+        }
+        //max-width: 570px;
+        
+        .tkn-limit-box{
+            margin-bottom: 20px;
+            background: #fbfbfb;
+            padding: 20px;
+            border: 1px solid #dfdfdf;
+            box-sizing: border-box;
+            position: relative;
+            min-width: 272px;
+            @media (max-width: 860px) {
+                //min-width: 380px;
+                &:first-child{
+                    margin-right: 0px !important;
+                }
+            }
+
+            &:first-child{
+                margin-right: 20px
+            }
+
+            span{
+                font-size: 12px;
+            }
+            .tkn-limit-tooltip{
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                img{
+                    width: 14px;
+                }
+            }
+            .tkn-limit-icon{
+                img{
+                    width: 44px
+                }
+            }
+            .tkn-limit-name{
+                margin-top: 14px;
+                width: 175px;
+                span{
+                    font-weight: bold;
+                }
+            }
+            .tkn-limit-stats{
+                
+                .rupee{
+                    margin-right: 4px;
+                }
+                &.multiple{
+                    height: 30px;
+                    line-height: 15px;
+
+                    .stat{
+                        &:first-child{
+                            //width: 110px;
+                            flex: 1 1 110px;
+                            border-right: 1.2px solid #dddddd;
+                            margin-left: 0;
+                        }
+                        flex: 1 1 auto;
+                        margin-left: 9px;
+                        @media (max-width: 860px) {
+                            margin-left: 37px !important;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+.tkn-manage-limits-button{
+    padding: 0 15px;
+    margin-top: 30px;
+    @media (max-width: 860px) {
+        margin-top: 20px;
+        .tkn-button{
+            width: 100%;
+        }
+    }
+    .tkn-button{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

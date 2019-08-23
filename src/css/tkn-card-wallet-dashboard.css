@@ -1,0 +1,136 @@
+.tkn-select-card {
+  padding: 30px 50px;
+}
+@media (max-width: 860px) {
+  .tkn-select-card {
+    padding: 30px 15px 25px 15px;
+  }
+}
+.tkn-select-card .heading span {
+  font-size: 24px;
+  font-weight: 600;
+}
+.tkn-select-card .tkn-card-selection-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .tkn-select-card .tkn-card-selection-section {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+.tkn-select-card .tkn-card-selection-section .tkn-card-selection-label span {
+  font-size: 13px;
+  font-weight: 600;
+}
+.tkn-select-card .tkn-card-selection-section .tkn-card-selection-dd {
+  margin-left: 60px;
+  max-width: 450px;
+  min-width: 290px;
+  width: 100%;
+}
+@media (max-width: 860px) {
+  .tkn-select-card .tkn-card-selection-section .tkn-card-selection-dd {
+    margin-left: 0px !important;
+    margin-top: 15px;
+  }
+}
+.tkn-select-card .tkn-card-selection-section .tkn-card-selection-dd .tkn-dropdown span {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: none;
+}
+.tkn-limits-container {
+  padding: 30px 50px 40px 50px;
+}
+@media (max-width: 860px) {
+  .tkn-limits-container {
+    padding: 30px 15px 0px 15px;
+  }
+}
+.tkn-limits-container .tkn-limit-box-row {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 860px) {
+  .tkn-limits-container .tkn-limit-box-row {
+    flex-direction: column;
+  }
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box {
+  margin-bottom: 20px;
+  background: #fbfbfb;
+  padding: 20px;
+  border: 1px solid #dfdfdf;
+  box-sizing: border-box;
+  position: relative;
+  min-width: 272px;
+}
+@media (max-width: 860px) {
+  .tkn-limits-container .tkn-limit-box-row .tkn-limit-box:first-child {
+    margin-right: 0px !important;
+  }
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box:first-child {
+  margin-right: 20px;
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box span {
+  font-size: 12px;
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box .tkn-limit-tooltip {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box .tkn-limit-tooltip img {
+  width: 14px;
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box .tkn-limit-icon img {
+  width: 44px;
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box .tkn-limit-name {
+  margin-top: 14px;
+  width: 175px;
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box .tkn-limit-name span {
+  font-weight: bold;
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box .tkn-limit-stats .rupee {
+  margin-right: 4px;
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box .tkn-limit-stats.multiple {
+  height: 30px;
+  line-height: 15px;
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box .tkn-limit-stats.multiple .stat {
+  flex: 1 1 auto;
+  margin-left: 9px;
+}
+.tkn-limits-container .tkn-limit-box-row .tkn-limit-box .tkn-limit-stats.multiple .stat:first-child {
+  flex: 1 1 110px;
+  border-right: 1.2px solid #dddddd;
+  margin-left: 0;
+}
+@media (max-width: 860px) {
+  .tkn-limits-container .tkn-limit-box-row .tkn-limit-box .tkn-limit-stats.multiple .stat {
+    margin-left: 37px !important;
+  }
+}
+.tkn-manage-limits-button {
+  padding: 0 15px;
+  margin-top: 30px;
+}
+@media (max-width: 860px) {
+  .tkn-manage-limits-button {
+    margin-top: 20px;
+  }
+  .tkn-manage-limits-button .tkn-button {
+    width: 100%;
+  }
+}
+.tkn-manage-limits-button .tkn-button {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -195,8 +195,8 @@
                                             padding-left: 20px !important;
 
                                             .limit-slider{
-                                                margin-left: -25px; // to counter parent padding
-                                                margin-right: -5px; // to counter parent padding
+                                                margin-left: -20px; // to counter parent padding
+                                                //margin-right: -5px; // to counter parent padding
                                             }
                                             .disclaimer{
                                                 padding: 10px;
@@ -224,9 +224,10 @@
                                      .sub-text{
                                          span{
                                              font-size: 14px;
-                                            color: #666666;
+                                                color: #666666;
                                          }
                                          margin-top: 5px;
+                                         line-height: 1.8;
                                          @media (max-width: 767px) {
                                              margin-top: 20px;
                                          }
@@ -368,6 +369,43 @@
                                 padding: 0 30px;
                             }
                          }
+                     }
+                 }
+
+                 .d2i-modal{
+                    z-index: 9999;
+                    @media (max-width: 767px) {
+                        
+                        .d2i-modal-body{
+                            width: 100%;
+                            height: 100%;
+                            padding: 95px 30px 25px 30px !important; 
+                            text-align: center;
+                            .close-modal-icon{
+                                top: 30px !important;
+                                right: 30px !important;
+                                
+                            }
+                        }
+                    }
+                    .d2i-modal-body{
+
+                        padding: 30px 30px 12px 50px;
+                        /* width: 464px; */
+                        //width: 464px;
+                        box-sizing: border-box;
+                        .close-modal-icon{
+                            position: absolute;
+                            top: 15px;
+                            right: 15px;
+                            cursor: pointer;
+                            img{
+                                width: 15px;
+                            }
+                        }
+                        form{
+                            margin-bottom: 0;
+                        }
                      }
                  }
              //}

@@ -1,0 +1,33 @@
+.tkn-success-message-container {
+  margin: 30px 60px;
+  background-color: #f2f9fc;
+  padding: 30px 20px;
+  border: 1px solid #dcecf3;
+}
+@media (max-width: 767px) {
+  .tkn-success-message-container {
+    margin: 30px 20px;
+  }
+  .tkn-success-message-container p:last-child {
+    margin-bottom: 0;
+  }
+}
+.tkn-success-message-container p {
+  margin-bottom: 20px;
+  color: #7f7f7f;
+  font-weight: 600;
+}
+.tkn-success-message-container p:first-child {
+  margin-bottom: 10px;
+}
+.tkn-success-message-container .heading {
+  color: #333333;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0px 0px 20px 0px;
+}
+.tkn-success-message-container .link {
+  cursor: pointer;
+  font-weight: 600;
+  color: #0095d9;
+}

@@ -96,7 +96,11 @@ function switchTab(event, tabID) {
 }
 
 function openExitWithoutSaveModal() {
-    window.location.hash = 'exitWithoutSave';
+    $('#submit-dispute-modal').addClass('show');
+}
+
+function closeModal(){
+    $('#submit-dispute-modal').removeClass('show')
 }
 
 function onExitWithoutSave(){
@@ -293,7 +297,7 @@ var slider2 = document.getElementById('range-slider-2');
 noUiSlider.create(slider2, {
     start: 0,
     connect: 'lower',
-    step: 1,
+    step: 100,
     orientation: 'horizontal', // 'horizontal' or 'vertical'
     range: {
         'min': 500,
@@ -364,7 +368,7 @@ inputField2.addEventListener('keydown', function (e) {
 origins[0].setAttribute('disabled', true); */
 
 // 
-function enableApplyButton(){
+/* function enableApplyButton(){
     changesMade = true;
     const buttons = document.querySelectorAll('.apply-digital');
     buttons.forEach(button => {
@@ -373,7 +377,7 @@ function enableApplyButton(){
 
     const cancelLinks = document.querySelectorAll('.cancel-changes');
     cancelLinks.forEach(link => {
-        link.classList.remove('disabled', 'gray');
+        link.classList.remove('tkn-disabled', 'tkn-gray');
     });
 }
 
@@ -385,9 +389,9 @@ function disableApplyButton(){
 
     const cancelLinks = document.querySelectorAll('.cancel-changes');
     cancelLinks.forEach(link => {
-        link.classList.add('disabled', 'gray');
+        link.classList.add('tkn-disabled', 'tkn-gray');
     });
-}
+} */
 
 /**
  * Card carousel code
