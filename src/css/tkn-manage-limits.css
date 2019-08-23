@@ -84,10 +84,37 @@
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.active {
   display: block;
-  /* z-index: 2;
-                                 opacity: 1;
-                                 transform: translateX(0);
-                                 transition: transform 0.3s; */
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.tkn-tab-card section .toggle-section {
+  padding: 30px 30px 30px 25px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.tkn-tab-card section .toggle-section .sub-text {
+  margin-top: 10px;
+  line-height: 1.8;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.tkn-tab-card section .toggle-section .sub-text span {
+  font-size: 14px;
+  color: #666666;
+}
+@media (max-width: 767px) {
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.tkn-tab-card section .toggle-section .sub-text {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.tkn-tab-card section .toggle-section {
+    padding: 30px 20px 30px 20px;
+  }
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.tkn-tab-card section .toggle-section .sub-toggle-section {
+    padding-left: 20px !important;
+  }
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.tkn-tab-card section .toggle-section .sub-toggle-section .limit-slider {
+    margin-left: -20px;
+  }
+  .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.tkn-tab-card section .toggle-section .sub-toggle-section .disclaimer {
+    padding: 10px;
+    margin-left: -20px;
+  }
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section {
   background-color: #ffffff;
@@ -163,6 +190,7 @@
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section {
   padding-left: 25px;
+  width: 100%;
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section .heading-text {
   height: 32px;
@@ -174,6 +202,9 @@
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .heading-text span {
   font-size: 16px;
+}
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .heading-text.semi-bold span {
+  font-weight: 600;
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-text {
   margin-top: 5px;

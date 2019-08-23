@@ -118,10 +118,40 @@
                              display: none;
                              &.active{
                                  display: block;
-                                 /* z-index: 2;
-                                 opacity: 1;
-                                 transform: translateX(0);
-                                 transition: transform 0.3s; */
+
+                             }
+                             &.tkn-tab-card{
+                                section{
+                                    .toggle-section{
+                                        padding: 30px 30px 30px 25px;
+                                        .sub-text{
+                                            span{
+                                                font-size: 14px;
+                                                   color: #666666;
+                                            }
+                                            margin-top: 10px;
+                                            line-height: 1.8;
+                                            @media (max-width: 767px) {
+                                                margin-top: 20px;
+                                            }
+                                        }
+                                        @media (max-width: 767px) {
+                                           padding: 30px 20px 30px 20px;
+                                           .sub-toggle-section{
+                                               padding-left: 20px !important;
+   
+                                               .limit-slider{
+                                                   margin-left: -20px; // to counter parent padding
+                                                   //margin-right: -5px; // to counter parent padding
+                                               }
+                                               .disclaimer{
+                                                   padding: 10px;
+                                                   margin-left: -20px // to counter parent padding
+                                               }
+                                           }
+                                       }
+                                    }
+                                }
                              }
 
                              section{
@@ -207,6 +237,7 @@
 
                                     .sub-toggle-section{
                                         padding-left: 25px;
+                                        width: 100%;
                                         .heading-text{
                                             height: 32px;
                                             line-height: 32px;
@@ -219,6 +250,11 @@
                                         span{
                                             font-size: 16px;
                                             //font-weight: 600;
+                                        }
+                                        &.semi-bold{
+                                            span{
+                                                font-weight: 600;
+                                            }
                                         }
                                      }
                                      .sub-text{

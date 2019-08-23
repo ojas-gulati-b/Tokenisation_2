@@ -83,7 +83,8 @@ function goToScreen(screen) {
     
 }
 function switchTab(event, tabID) {
-    /* const tabs = document.querySelectorAll(`.tkn-manage-limits-screen .tab-content .content`), tabLinks = document.querySelectorAll(`.tkn-manage-limits-screen .tabs-header .tabs .tab`);
+    const tabs = document.querySelectorAll(`.tkn-manage-limits-screen .tab-content .content`),
+        tabLinks = document.querySelectorAll(`.tkn-manage-limits-screen .tabs-header .tkn-tabs .tkn-tab`);
     tabs.forEach(element => {
         element.classList.remove('active')
     });
@@ -92,7 +93,7 @@ function switchTab(event, tabID) {
     });
     const tabToActive = `.tkn-manage-limits-screen #${tabID}`;
     getElement(tabToActive).classList.add('active');
-    event.currentTarget.className += ' active'; */
+    event.currentTarget.className += ' active';
 }
 
 function openExitWithoutSaveModal() {
