@@ -64,12 +64,6 @@
   cursor: pointer;
   text-align: center;
 }
-.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab:hover {
-  border-bottom: 4px solid #0095d9;
-}
-.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab:hover span {
-  font-weight: 600;
-}
 .tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab.active {
   border-bottom: 4px solid #0095d9;
 }

@@ -80,18 +80,18 @@
                 <div class="block">
                     <ul class="tab-menu tkn">
                         <li class="">
-                                <a href="" style="background: #444444;">
-                                    Card and Wallet Limits
-                                </a>
-                                <ul class="tkn-sub-menu">
-                                    <li class="active ">
-                                        <a href="">
-                                            Manage Limits
-                                        </a>
-                                    </li>
-                            
-                                </ul>
-                            </li>
+                            <a href="" style="background: #444444;">
+                                Services
+                            </a>
+                            <ul class="tkn-sub-menu">
+                                <li class="active ">
+                                    <a href="">
+                                        Card and Wallet Limits
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                     </div>
-                        
+
                 </div>
                 <div class="tkn-divider"></div>
                 <div class="tkn-limits-container">
@@ -135,11 +135,11 @@
                                 <span>International Limit</span>
                             </div>
                             <div class="tkn-limit-stats multiple tkn-space-top-20 flex">
-                                <div class="stat">
+                                <div class="stat flex">
                                     <div><span>Limit: </span></div>
                                     <div><span class="rupee">₹</span><span> 25,117</span></div>
                                 </div>
-                                <div class="stat">
+                                <div class="stat flex">
                                     <div><span>Utilized this month: </span></div>
                                     <div><span class="rupee">₹</span><span> 2000</span></div>
                                 </div>
@@ -156,11 +156,11 @@
                                 <span>Online Limit</span>
                             </div>
                             <div class="tkn-limit-stats multiple tkn-space-top-20 flex">
-                                <div class="stat">
+                                <div class="stat flex">
                                     <div><span>Limit: </span></div>
                                     <div><span class="rupee">₹</span><span> 25,117</span></div>
                                 </div>
-                                <div class="stat">
+                                <div class="stat flex">
                                     <div><span>Utilized this month: </span></div>
                                     <div><span class="rupee">₹</span><span> 2000</span></div>
                                 </div>
@@ -168,41 +168,41 @@
                         </div>
                     </div>
                     <div class="tkn-limit-box-row row-2">
-                            <div class="tkn-limit-box">
-                                <div class="tkn-limit-tooltip">
-                                    <img src="assets/images/tooltip.png" alt="help" />
-                                </div>
-                                <div class="tkn-limit-icon">
-                                    <img src="assets/images/pin.png" alt="pin" />
-                                </div>
-                                <div class="tkn-limit-name">
-                                    <span>PIN based contactless spends</span>
-                                </div>
-                                <div class="tkn-limit-stats single tkn-space-top-20 flex">
-                                    <div class="stat flex">
-                                        <div style="margin-right: 7px"><span>Per transaction limit:</span></div>
-                                        <div><span class="rupee">₹</span><span>2000</span></div>
-                                    </div>
-                                </div>
+                        <div class="tkn-limit-box">
+                            <div class="tkn-limit-tooltip">
+                                <img src="assets/images/tooltip.png" alt="help" />
                             </div>
-                            <div class="tkn-limit-box">
-                                <div class="tkn-limit-tooltip">
-                                    <img src="assets/images/tooltip.png" alt="help" />
-                                </div>
-                                <div class="tkn-limit-icon">
-                                    <img src="assets/images/non-pin.png" alt="Non-PIN" />
-                                </div>
-                                <div class="tkn-limit-name">
-                                    <span>Non-PIN based contactless spends</span>
-                                </div>
-                                <div class="tkn-limit-stats single tkn-space-top-20 flex">
-                                    <div class="stat flex">
-                                        <div style="margin-right: 7px"><span>Per transaction limit:</span></div>
-                                        <div><span class="rupee">₹</span><span>2000</span></div>
-                                    </div>
+                            <div class="tkn-limit-icon">
+                                <img src="assets/images/non-pin.png" alt="Non-PIN" />
+                            </div>
+                            <div class="tkn-limit-name">
+                                <span>Non-PIN based contactless spends</span>
+                            </div>
+                            <div class="tkn-limit-stats single tkn-space-top-20 flex">
+                                <div class="stat flex">
+                                    <div style="margin-right: 7px"><span>Per transaction limit:</span></div>
+                                    <div><span class="rupee">₹</span><span>2000</span></div>
                                 </div>
                             </div>
                         </div>
+                        <div class="tkn-limit-box">
+                            <div class="tkn-limit-tooltip">
+                                <img src="assets/images/tooltip.png" alt="help" />
+                            </div>
+                            <div class="tkn-limit-icon">
+                                <img src="assets/images/pin.png" alt="pin" />
+                            </div>
+                            <div class="tkn-limit-name">
+                                <span>PIN based contactless spends</span>
+                            </div>
+                            <div class="tkn-limit-stats single tkn-space-top-20 flex">
+                                <div class="stat flex">
+                                    <div style="margin-right: 7px"><span>Per transaction limit:</span></div>
+                                    <div><span class="rupee">₹</span><span>2000</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tkn-divider"></div>
                 <div class="tkn-manage-limits-button ">
@@ -214,9 +214,9 @@
         </div>
     </div>
     <script>
-        $('#tkn-dropdown .dropdown-menu.options > li > a').on('click', function() {
-        $('.dropdown-toggle.selected-option #tkn-card-number').text(this.text)
-      })
+        $('#tkn-dropdown .dropdown-menu.options > li > a').on('click', function () {
+            $('.dropdown-toggle.selected-option #tkn-card-number').text(this.text)
+        })
     </script>
 </body>
 

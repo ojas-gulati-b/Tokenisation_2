@@ -1,13 +1,13 @@
 /** Global Variables */
-let nonPinCountLimit = 5;
-let selectedCardID = '';
-let carouselLoaded = false;
-let changesMade = false
+let nonPinCountLimit = 5, pinCountLimit = 99, selectedCardID = '', carouselLoaded = false, changesMade = false;
+// Slider values (min/max) 
+// Set the min and max for each slider in these vars
+let sliderMinValueNonPin = 500, sliderMaxValueNonPin = 2000, sliderMinValuePin = 1000, sliderMaxValuePin = 4000;
 
 function getElement(selector) {
     return document.querySelector(selector);
 }
-function goToScreen(screen) {
+/* function goToScreen(screen) {
     let prevScreen, nextScreen;
     if (screen === 'card-limits') {
         prevScreen = getElement('#cards-list');
@@ -36,7 +36,6 @@ function goToScreen(screen) {
             else
                 element.value = element.defaultValue;
         })
-        /* getElement('#tab-content-form').reset(); */
     }
     else if (screen === 'applied-changes-screen') {
         let limitCountInputs = document.querySelectorAll('#digital-spends .limit-count input'), valid = true;
@@ -63,7 +62,6 @@ function goToScreen(screen) {
     prevScreen.classList.add('hidden');
     nextScreen.classList.remove('hidden');
     if(screen === 'card-limits' && !carouselLoaded){
-        //$('.card-carousel-screen-2').slick();
         initializeCarousel('card-carousel-screen-2', {
             dots: true,
             centerMode: true,
@@ -81,7 +79,7 @@ function goToScreen(screen) {
         $('.card-carousel-screen-1').slick('slickGoTo', selectedCardID-1);
     }
     
-}
+} */
 function switchTab(event, tabID) {
     /* const tabs = document.querySelectorAll(`.tkn-manage-limits-screen .tab-content .content`), tabLinks = document.querySelectorAll(`.tkn-manage-limits-screen .tabs-header .tabs .tab`);
     tabs.forEach(element => {
@@ -207,7 +205,7 @@ function onChangeSlave(event, selector, umbrellaClass){
     }
 }
 
-function onChangeDigitalMaster(umbrellaClass){
+function onChangeDigitalMaster(umbrellaClass, initialFire){
     const section = getElement(`.${umbrellaClass}`), toggle = getElement(`.${umbrellaClass} .master-toggle`);
     let sectionToDisable1 = section.querySelector('.limit-amount'), sectionToDisable2 = section.querySelector('.limit-count');
     if(!toggle.checked){
@@ -218,6 +216,24 @@ function onChangeDigitalMaster(umbrellaClass){
         section.classList.remove('tkn-gray');
         sectionToDisable1.classList.remove('tkn-disabled', 'tkn-gray');
         sectionToDisable2.classList.remove('tkn-disabled', 'tkn-gray');
+
+        // Slider and the input values should come to their max values when the swutch ios turned off and on
+        const sliderInput = getElement(`#tab-content-form #digital-spends .${umbrellaClass} #new-limit-${umbrellaClass}`);
+        const countInput = getElement(`#tab-content-form #digital-spends .${umbrellaClass} .limit-count .new .limit .limit-input`);
+        if(!initialFire){
+            if(umbrellaClass == 'non-pin'){
+                //if non-pin
+                sliderNonPin.noUiSlider.set(sliderMaxValueNonPin);
+                sliderInput.value = sliderMaxValueNonPin;
+                countInput.value = nonPinCountLimit;
+            }else{
+                // if pin
+                sliderPin.noUiSlider.set(sliderMaxValuePin);
+                sliderInput.value = sliderMaxValuePin;
+                countInput.value = pinCountLimit;
+            }
+        }
+            
     }
 }
 
@@ -276,15 +292,15 @@ noUiSlider.create(slider1, {
     }
 }); */
 
-var slider1 = document.getElementById('range-slider-1');
-noUiSlider.create(slider1, {
+var sliderNonPin = document.getElementById('range-slider-non-pin');
+noUiSlider.create(sliderNonPin, {
     start: 0,
     connect: 'lower',
-    step: 1,
+    step: 100,
     orientation: 'horizontal', // 'horizontal' or 'vertical'
     range: {
-        'min': 500,
-        'max': 2000
+        'min': sliderMinValueNonPin,
+        'max': sliderMaxValueNonPin
     },
     pips: {
         mode: 'count',
@@ -293,15 +309,16 @@ noUiSlider.create(slider1, {
     }
 });
 
-var slider2 = document.getElementById('range-slider-2');
-noUiSlider.create(slider2, {
+// Steps for pin transactions are 1000 so starting from 1000 ending till 4000
+var sliderPin = document.getElementById('range-slider-pin');
+noUiSlider.create(sliderPin, {
     start: 0,
     connect: 'lower',
-    step: 100,
+    step: 1000,
     orientation: 'horizontal', // 'horizontal' or 'vertical'
     range: {
-        'min': 500,
-        'max': 2000
+        'min': sliderMinValuePin,
+        'max': sliderMaxValuePin
     },
     pips: {
         mode: 'count',
@@ -311,55 +328,55 @@ noUiSlider.create(slider2, {
 });
 
 /** Linking sliders with input fields */
-const inputField1 = document.getElementById('new-limit-1');
+const inputFieldNonPin = document.getElementById('new-limit-non-pin');
 
 //update input field on slider update
-slider1.noUiSlider.on('update', function (values, handle) {
+sliderNonPin.noUiSlider.on('update', function (values, handle) {
     const value = values[handle];
     /* if (handle) { // i.e. if handle with index 1 comes up
         inputField1.value = Math.round(value);
     } */
-    inputField1.value = Math.round(value);
+    inputFieldNonPin.value = Math.round(value);
     enableApplyButton();
 });
 
 // update slider when user clicks outside the box after entering the value
-inputField1.addEventListener('change', function () {
+inputFieldNonPin.addEventListener('change', function () {
     /* slider1.noUiSlider.set([null, this.value]); */
-    slider1.noUiSlider.set(this.value);
+    sliderNonPin.noUiSlider.set(this.value);
 });
 
 // update the slider after user presses enter key after entering the value
-inputField1.addEventListener('keydown', function (e) {
+inputFieldNonPin.addEventListener('keydown', function (e) {
 
     if(e.which == 13){
-        slider1.noUiSlider.set(this.value);
+        sliderNonPin.noUiSlider.set(this.value);
     }
 
 });
 
-const inputField2 = document.getElementById('new-limit-2');
+const inputFieldPin = document.getElementById('new-limit-pin');
 
 //update input field on slider update
-slider2.noUiSlider.on('update', function (values, handle) {
+sliderPin.noUiSlider.on('update', function (values, handle) {
     const value = values[handle];
     /* if (handle) {
         inputField2.value = Math.round(value);
     } */
-    inputField2.value = Math.round(value);
+    inputFieldPin.value = Math.round(value);
     enableApplyButton();
 });
 
 // update slider when user clicks outside the box after entering the value
-inputField2.addEventListener('change', function () {
+inputFieldPin.addEventListener('change', function () {
     /* slider2.noUiSlider.set([null, this.value]); */
-    slider2.noUiSlider.set(this.value);
+    sliderPin.noUiSlider.set(this.value);
 });
 
 // update the slider after user presses enter key after entering the value
-inputField2.addEventListener('keydown', function (e) {
+inputFieldPin.addEventListener('keydown', function (e) {
     if(e.which == 13){
-        slider2.noUiSlider.set(this.value);
+        sliderPin.noUiSlider.set(this.value);
     }
 });
 
@@ -368,8 +385,8 @@ inputField2.addEventListener('keydown', function (e) {
 origins[0].setAttribute('disabled', true); */
 
 // 
-/* function enableApplyButton(){
-    changesMade = true;
+ function enableApplyButton(){
+    /* changesMade = true;
     const buttons = document.querySelectorAll('.apply-digital');
     buttons.forEach(button => {
         button.removeAttribute("disabled");
@@ -378,11 +395,11 @@ origins[0].setAttribute('disabled', true); */
     const cancelLinks = document.querySelectorAll('.cancel-changes');
     cancelLinks.forEach(link => {
         link.classList.remove('tkn-disabled', 'tkn-gray');
-    });
+    }); */
 }
 
 function disableApplyButton(){
-    const buttons = document.querySelectorAll('.apply-digital');
+    /* const buttons = document.querySelectorAll('.apply-digital');
     buttons.forEach(button => {
         button.setAttribute("disabled", true);
     });
@@ -390,8 +407,8 @@ function disableApplyButton(){
     const cancelLinks = document.querySelectorAll('.cancel-changes');
     cancelLinks.forEach(link => {
         link.classList.add('tkn-disabled', 'tkn-gray');
-    });
-} */
+    }); */
+}
 
 /**
  * Card carousel code
@@ -449,28 +466,27 @@ function selectCardOption(event){
 function init(){
     onChangeCardMaster('all-online', 'desktop'); onChangeCardMaster('all-online', 'mobile');
     onChangeCardMaster('all-international', 'desktop'); onChangeCardMaster('all-international', 'mobile');
-    onChangeDigitalMaster('non-pin', 'desktop'); onChangeDigitalMaster('non-pin', 'mobile');
-    onChangeDigitalMaster('pin', 'desktop'); onChangeDigitalMaster('pin', 'mobile');
+    onChangeDigitalMaster('non-pin', true);
+    onChangeDigitalMaster('pin', true);
     disableApplyButton();
     inputFocus('.limit-input');
-    const carousel1Options = {
+    /* const carousel1Options = {
         dots: false,
         centerMode: true,
         arrows: false,
-        /* centerPadding: '40px', */
         slidesToShow: 1,
         slidesToScroll: 3,
         initialSlide: 1,
         infinite: false,
         variableWidth: true,
-    };
+    }; */
 
     /* $(document).ready(function(){
         initializeCarousel('card-carousel-screen-1', carousel1Options);
         changesMade = false; // Setting pristine state for inputs
     }); */
 
-    (function () {
+    /* (function () {
         $(document).mouseup(function (e) {
             var container = $('.all-options');
             // if the target of the click isn't the container nor a descendant of the container
@@ -478,7 +494,7 @@ function init(){
                 container.hide();
             }
         });
-    }());
+    }()); */
 
       
 }
