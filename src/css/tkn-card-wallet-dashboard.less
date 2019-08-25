@@ -99,7 +99,10 @@
             }
             .tkn-limit-name{
                 margin-top: 14px;
-                width: 175px;
+                max-width: 175px;
+                @media (max-width: 860px) {
+                    max-width: none;
+                }
                 span{
                     font-weight: bold;
                 }
@@ -112,6 +115,10 @@
                 &.multiple{
                     height: 30px;
                     line-height: 15px;
+                    @media (max-width: 860px) {
+                        height: unset;
+                        line-height: unset;
+                    }
 
                     .stat{
                         &:first-child{
