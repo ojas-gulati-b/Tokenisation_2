@@ -156,7 +156,7 @@
   }
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section {
-  padding-left: 25px;
+  padding-left: 45px;
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section .heading-text {
   height: 32px;
@@ -331,6 +331,6 @@
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .d2i-modal .d2i-modal-body .close-modal-icon img {
   width: 15px;
 }
-.tkn-manage-limits-screen .tkn-spends-section .tabs-body .d2i-modal .d2i-modal-body form {
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .d2i-modal .d2i-modal-body .tkn-modal-main-content {
   margin-bottom: 0;
 }
