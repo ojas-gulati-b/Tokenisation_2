@@ -231,12 +231,12 @@ function validateInputMax(event, max){
 }
 
 function applyChanges(){
-    var limitCountInputs = document.querySelectorAll('#digital-spends .limit-count input'), valid = true;
+    /* var limitCountInputs = document.querySelectorAll('#digital-spends .limit-count input'), valid = true;
     limitCountInputs.forEach(input => {
             if(!input.checkValidity())
                 valid = false;
         });
-    if(valid)
+    if(valid) */
     window.location='tkn-changes-successful.html';
 
 }
