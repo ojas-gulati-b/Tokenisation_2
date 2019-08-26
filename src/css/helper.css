@@ -108,7 +108,16 @@
     font-weight: bold;
     text-align: center;
 }
+.tkn-button:focus{
+    background: #0095d9;
+    color: #fff;
+}
 .tkn-button.secondary{
+    background: #f3f2f2;
+    color: #666666;
+    font-weight: bold;
+}
+.tkn-button.secondary:focus{
     background: #f3f2f2;
     color: #666666;
     font-weight: bold;

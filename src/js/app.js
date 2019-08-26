@@ -8,7 +8,7 @@ function getElement(selector) {
     return document.querySelector(selector);
 }
 /* function goToScreen(screen) {
-    let prevScreen, nextScreen;
+    var prevScreen, nextScreen;
     if (screen === 'card-limits') {
         prevScreen = getElement('#cards-list');
         nextScreen = getElement('#card-limits');
@@ -38,7 +38,7 @@ function getElement(selector) {
         })
     }
     else if (screen === 'applied-changes-screen') {
-        let limitCountInputs = document.querySelectorAll('#digital-spends .limit-count input'), valid = true;
+        var limitCountInputs = document.querySelectorAll('#digital-spends .limit-count input'), valid = true;
         limitCountInputs.forEach(input => {
             if(!input.checkValidity())
                 valid = false;
@@ -81,8 +81,8 @@ function getElement(selector) {
     
 } */
 function switchTab(event, tabID) {
-    var tabs = document.querySelectorAll(`.tkn-manage-limits-screen .tab-content .content`),
-        tabLinks = document.querySelectorAll(`.tkn-manage-limits-screen .tabs-header .tkn-tabs .tkn-tab`);
+    var tabs = document.querySelectorAll('.tkn-manage-limits-screen .tab-content .content'),
+        tabLinks = document.querySelectorAll('.tkn-manage-limits-screen .tabs-header .tkn-tabs .tkn-tab');
     
     for (var i=0; i<tabs.length; i++){
         tabs[i].classList.remove('active')
@@ -96,7 +96,7 @@ function switchTab(event, tabID) {
     /* tabLinks.forEach(element => {
         element.classList.remove('active')
     }); */
-    var tabToActive = `.tkn-manage-limits-screen #${tabID}`;
+    var tabToActive = '.tkn-manage-limits-screen #' + tabID;
     getElement(tabToActive).classList.add('active');
     event.currentTarget.className += ' active';
 }
@@ -106,7 +106,12 @@ function openExitWithoutSaveModal() {
 }
 
 function closeModal(){
-    $('#tkn-exit-without-save-modal').removeClass('show')
+    $('#tkn-exit-without-save-modal').removeClass('show');
+}
+
+function exitWithoutSave(){
+    $('#tkn-exit-without-save-modal').removeClass('show');
+    window.location = 'tkn-card-wallet-dashboard.html';
 }
 
 /**
@@ -114,7 +119,7 @@ function closeModal(){
  */
 
 function onChangeCardMaster(umbrellaClass) {
-    var slaveSelector = `.tkn-tab-card .${umbrellaClass} .slave`, masterToggleSelector = `.tkn-tab-card .${umbrellaClass} .master-toggle`;
+    var slaveSelector = '.tkn-tab-card .'+umbrellaClass+ ' .slave', masterToggleSelector = '.tkn-tab-card .'+umbrellaClass+' .master-toggle';
     var masterToggle = getElement(masterToggleSelector);
     var slaveSections = document.querySelectorAll(slaveSelector);
     if (masterToggle.type == 'checkbox' && masterToggle.checked === false){
@@ -124,7 +129,7 @@ function onChangeCardMaster(umbrellaClass) {
             if (slaveToggle.type == 'checkbox')
                 slaveToggle.checked = false;
         }
-        getElement(`.tkn-tab-card .${umbrellaClass} .master .sub-text`).classList.add('tkn-gray');
+        getElement('.tkn-tab-card .'+umbrellaClass+' .master .sub-text').classList.add('tkn-gray');
     }else{
         for (var i = 0; i < slaveSections.length; i++) {
             var slaveToggle = slaveSections[i].querySelector('.slave-toggle');
@@ -132,20 +137,20 @@ function onChangeCardMaster(umbrellaClass) {
             if (slaveToggle.type == 'checkbox')
                 slaveToggle.checked = true;
         }
-        getElement(`.tkn-tab-card .${umbrellaClass} .master .sub-text`).classList.remove('tkn-gray');
+        getElement('.tkn-tab-card .'+umbrellaClass+' .master .sub-text').classList.remove('tkn-gray');
     }
-}	
+}   
 
 function onChangeSlave(event, selector, umbrellaClass){
-    var checkBoxParent = getElement(`.${selector}`), checkBox = event.currentTarget,
-        slaveSections = document.querySelectorAll(`.${umbrellaClass} .slave`);
+    var checkBoxParent = getElement('.'+selector), checkBox = event.currentTarget,
+        slaveSections = document.querySelectorAll('.'+umbrellaClass+' .slave');
     if (checkBox.checked){
         checkBoxParent.classList.remove('tkn-gray');
     }else{
         checkBoxParent.classList.add('tkn-gray');
         // if all slaves are toggled off then turn master off
-        var slaves = document.querySelectorAll(`.${umbrellaClass} .slave .slave-toggle`);
-        var masterToggle = getElement(`.${umbrellaClass} .master-toggle`), every = 0;
+        var slaves = document.querySelectorAll('.'+umbrellaClass+' .slave .slave-toggle');
+        var masterToggle = getElement('.'+umbrellaClass+' .master-toggle'), every = 0;
 
         for (var i=0; i<slaves.length; i++){
             if (slaves[i].type == 'checkbox' && !slaves[i].checked){
@@ -154,7 +159,7 @@ function onChangeSlave(event, selector, umbrellaClass){
         }
         if(every == slaves.length){
             masterToggle.checked = false;
-            getElement(`.${umbrellaClass} .master .sub-text`).classList.add('tkn-gray');
+            getElement('.'+umbrellaClass+' .master .sub-text').classList.add('tkn-gray');
 
             for (var i = 0; i < slaveSections.length; i++) {
                 var slaveToggle = slaveSections[i].querySelector('.slave-toggle');
@@ -167,7 +172,7 @@ function onChangeSlave(event, selector, umbrellaClass){
 }
 
 function onChangeDigitalMaster(umbrellaClass, initialFire){
-    var section = getElement(`.${umbrellaClass}`), toggle = getElement(`.${umbrellaClass} .master-toggle`);
+    var section = getElement('.'+umbrellaClass), toggle = getElement('.'+umbrellaClass+' .master-toggle');
     var sectionToDisable1 = section.querySelector('.limit-amount'), sectionToDisable2 = section.querySelector('.limit-count');
     if(!toggle.checked){
         section.classList.add('tkn-gray');
@@ -179,8 +184,8 @@ function onChangeDigitalMaster(umbrellaClass, initialFire){
         sectionToDisable2.classList.remove('tkn-disabled', 'tkn-gray');
 
         // Slider and the input values should come to their max values when the swutch ios turned off and on
-        var sliderInput = getElement(`#tab-content-form #digital-spends .${umbrellaClass} #new-limit-${umbrellaClass}`);
-        var countInput = getElement(`#tab-content-form #digital-spends .${umbrellaClass} .limit-count .new .limit .limit-input`);
+        var sliderInput = getElement('#tab-content-form #digital-spends .'+umbrellaClass+' #new-limit-'+umbrellaClass);
+        var countInput = getElement('#tab-content-form #digital-spends .'+umbrellaClass+' .limit-count .new .limit .limit-input');
         if(!initialFire){
             if(umbrellaClass == 'non-pin'){
                 //if non-pin
@@ -211,8 +216,8 @@ function changeNonPinCountLimit(event){
 }
 
 function changeViewOnLimitChange(umbrellaClass, limit, toggleStatus){
-    var limitLabel = getElement(`.${umbrellaClass} .limit-count .new .input-label .count`);
-    var disclaimer = getElement(`#digital-spends .disclaimer span`);
+    var limitLabel = getElement('.'+umbrellaClass+' .limit-count .new .input-label .count');
+    var disclaimer = getElement('#digital-spends .disclaimer span');
     limitLabel.innerHTML = limit;
     if(toggleStatus)
         disclaimer.innerHTML = 'Disabling international spends will affect your max limits for non-PIN based Contactless POS transactions';
@@ -232,10 +237,18 @@ function validateInputMax(event, max){
 
 function applyChanges(){
     var limitCountInputs = document.querySelectorAll('#digital-spends .limit-count input'), valid = true;
-    limitCountInputs.forEach(input => {
+    for(var i=0; i<limitCountInputs.length; i++){
+        if(!limitCountInputs[i].checkValidity()){
+            valid = false;
+            $(limitCountInputs[i]).parent('div').css('border-color','salmon');
+
+        }
+    }
+    /* limitCountInputs.forEach(input => {
             if(!input.checkValidity())
                 valid = false;
-        });
+                
+        }); */
     if(valid)
     window.location='tkn-changes-successful.html';
 
@@ -359,11 +372,11 @@ origins[0].setAttribute('disabled', true); */
 // 
  function enableApplyButton(){
     changesMade = true;
-    const buttons = document.querySelectorAll('.apply-digital');
+    var buttons = document.querySelectorAll('.apply-digital');
     for(var i=0; i<buttons.length; i++){
         buttons[i].removeAttribute("disabled");
     }
-    const cancelLinks = document.querySelectorAll('.cancel-changes');
+    var cancelLinks = document.querySelectorAll('.cancel-changes');
     for(var i=0; i<cancelLinks.length; i++){
         cancelLinks[i].classList.remove('tkn-disabled');
         cancelLinks[i].removeAttribute("disabled");
@@ -371,11 +384,11 @@ origins[0].setAttribute('disabled', true); */
 }
 
 function disableApplyButton(){
-    const buttons = document.querySelectorAll('.apply-digital');
+    var buttons = document.querySelectorAll('.apply-digital');
     for(var i=0; i<buttons.length; i++){
         buttons[i].setAttribute("disabled", true);
     }
-    const cancelLinks = document.querySelectorAll('.cancel-changes');
+    var cancelLinks = document.querySelectorAll('.cancel-changes');
     for(var i=0; i<cancelLinks.length; i++){
         cancelLinks[i].classList.add('tkn-disabled');
         cancelLinks[i].setAttribute("disabled", true);
@@ -408,3 +421,4 @@ function init(){
 }
 
 init();
+
