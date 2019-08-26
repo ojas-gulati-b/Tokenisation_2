@@ -34,6 +34,7 @@
             @media (max-width: 860px) {
                 margin-left: 0px !important;
                 margin-top: 15px;
+                max-width: unset;
             }
 
             .tkn-dropdown{
@@ -47,9 +48,9 @@
     }
 }
 .tkn-limits-container{
-    padding: 30px 50px 40px 50px;
+    padding: 30px 50px 10px 50px;
     @media (max-width: 860px) {
-        padding: 30px 15px 0px 15px;
+        padding: 30px 15px 10px 15px;
     }
 
     .tkn-limit-box-row{
@@ -98,7 +99,10 @@
             }
             .tkn-limit-name{
                 margin-top: 14px;
-                width: 175px;
+                max-width: 175px;
+                @media (max-width: 860px) {
+                    max-width: none;
+                }
                 span{
                     font-weight: bold;
                 }
@@ -111,6 +115,10 @@
                 &.multiple{
                     height: 30px;
                     line-height: 15px;
+                    @media (max-width: 860px) {
+                        height: unset;
+                        line-height: unset;
+                    }
 
                     .stat{
                         &:first-child{
@@ -121,8 +129,13 @@
                         }
                         flex: 1 1 auto;
                         margin-left: 9px;
+                        flex-direction: column;
                         @media (max-width: 860px) {
-                            margin-left: 37px !important;
+                            margin-left: 37px;
+                            flex-direction: row;
+                            div:first-child{
+                                margin-right: 5px;
+                            }
                         }
                     }
                 }

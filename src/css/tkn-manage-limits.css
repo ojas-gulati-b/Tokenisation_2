@@ -64,12 +64,6 @@
   cursor: pointer;
   text-align: center;
 }
-.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab:hover {
-  border-bottom: 4px solid #0095d9;
-}
-.tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab:hover span {
-  font-weight: 600;
-}
 .tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs .tkn-tab.active {
   border-bottom: 4px solid #0095d9;
 }
@@ -98,7 +92,7 @@
 }
 @media (max-width: 767px) {
   .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content.tkn-tab-card section .toggle-section .sub-text {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 }
 @media (max-width: 767px) {
@@ -189,8 +183,7 @@
   }
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section {
-  padding-left: 25px;
-  width: 100%;
+  padding-left: 45px;
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-toggle-section .heading-text {
   height: 32px;
@@ -216,7 +209,7 @@
 }
 @media (max-width: 767px) {
   .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .sub-text {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section .set-limit .input-label {
@@ -368,6 +361,6 @@
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .d2i-modal .d2i-modal-body .close-modal-icon img {
   width: 15px;
 }
-.tkn-manage-limits-screen .tkn-spends-section .tabs-body .d2i-modal .d2i-modal-body form {
+.tkn-manage-limits-screen .tkn-spends-section .tabs-body .d2i-modal .d2i-modal-body .tkn-modal-main-content {
   margin-bottom: 0;
 }

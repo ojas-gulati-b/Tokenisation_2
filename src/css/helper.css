@@ -113,6 +113,10 @@
     color: #666666;
     font-weight: bold;
 }
+.tkn-button:disabled{
+    color: #fff;
+    background: #f3f2f2;
+}
 
 .tkn-hidden{
     display: none;
