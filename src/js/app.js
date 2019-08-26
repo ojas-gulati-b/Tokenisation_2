@@ -8,7 +8,7 @@ function getElement(selector) {
     return document.querySelector(selector);
 }
 /* function goToScreen(screen) {
-    let prevScreen, nextScreen;
+    var prevScreen, nextScreen;
     if (screen === 'card-limits') {
         prevScreen = getElement('#cards-list');
         nextScreen = getElement('#card-limits');
@@ -38,7 +38,7 @@ function getElement(selector) {
         })
     }
     else if (screen === 'applied-changes-screen') {
-        let limitCountInputs = document.querySelectorAll('#digital-spends .limit-count input'), valid = true;
+        var limitCountInputs = document.querySelectorAll('#digital-spends .limit-count input'), valid = true;
         limitCountInputs.forEach(input => {
             if(!input.checkValidity())
                 valid = false;
@@ -359,11 +359,11 @@ origins[0].setAttribute('disabled', true); */
 // 
  function enableApplyButton(){
     changesMade = true;
-    const buttons = document.querySelectorAll('.apply-digital');
+    var buttons = document.querySelectorAll('.apply-digital');
     for(var i=0; i<buttons.length; i++){
         buttons[i].removeAttribute("disabled");
     }
-    const cancelLinks = document.querySelectorAll('.cancel-changes');
+    var cancelLinks = document.querySelectorAll('.cancel-changes');
     for(var i=0; i<cancelLinks.length; i++){
         cancelLinks[i].classList.remove('tkn-disabled');
         cancelLinks[i].removeAttribute("disabled");
@@ -371,11 +371,11 @@ origins[0].setAttribute('disabled', true); */
 }
 
 function disableApplyButton(){
-    const buttons = document.querySelectorAll('.apply-digital');
+    var buttons = document.querySelectorAll('.apply-digital');
     for(var i=0; i<buttons.length; i++){
         buttons[i].setAttribute("disabled", true);
     }
-    const cancelLinks = document.querySelectorAll('.cancel-changes');
+    var cancelLinks = document.querySelectorAll('.cancel-changes');
     for(var i=0; i<cancelLinks.length; i++){
         cancelLinks[i].classList.add('tkn-disabled');
         cancelLinks[i].setAttribute("disabled", true);
