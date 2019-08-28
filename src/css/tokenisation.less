@@ -118,10 +118,51 @@
                              display: none;
                              &.active{
                                  display: block;
-                                 /* z-index: 2;
-                                 opacity: 1;
-                                 transform: translateX(0);
-                                 transition: transform 0.3s; */
+
+                             }
+                             &.tkn-tab-card{
+                                section{
+                                    .toggle-section{
+                                        padding: 30px 30px 30px 25px;
+                                        .sub-text{
+                                            span{
+                                                font-size: 14px;
+                                                color: #666666;
+                                            }
+                                            margin-top: 10px;
+                                            line-height: 1.8;
+                                            @media (max-width: 767px) {
+                                                margin-top: 15px;
+                                            }
+                                        }
+                                        .switch-disclaimer{
+                                            padding-left: 45px;
+                                            color: #666666;
+                                            font-size: 14px;
+                                            margin-top: 10px;
+                                            display: none;
+                                            transition: 0.3s;
+                                        }
+                                        @media (max-width: 767px) {
+                                           padding: 30px 20px 30px 20px;
+                                           .sub-toggle-section{
+                                               padding-left: 20px !important;
+   
+                                               .limit-slider{
+                                                   margin-left: -20px; // to counter parent padding
+                                                   //margin-right: -5px; // to counter parent padding
+                                               }
+                                               .disclaimer{
+                                                   padding: 10px;
+                                                   margin-left: -20px // to counter parent padding
+                                               }
+                                           }
+                                           .switch-disclaimer{
+                                            padding-left: 20px !important;
+                                            }
+                                       }
+                                    }
+                                }
                              }
 
                              section{
@@ -220,16 +261,21 @@
                                             font-size: 16px;
                                             //font-weight: 600;
                                         }
+                                        &.semi-bold{
+                                            span{
+                                                font-weight: 600;
+                                            }
+                                        }
                                      }
                                      .sub-text{
                                          span{
                                              font-size: 14px;
-                                                color: #666666;
+                                             color: #666666;
                                          }
                                          margin-top: 5px;
                                          line-height: 1.8;
                                          @media (max-width: 767px) {
-                                             margin-top: 20px;
+                                             margin-top: 15px;
                                          }
                                      }
                                      .set-limit{
@@ -293,9 +339,9 @@
                                                      /* &:focus{
                                                          outline-color: #0095d9;
                                                      } */
-                                                     &:invalid{
+                                                     /* &:invalid{
                                                          outline-color: salmon;
-                                                     }
+                                                     } */
                                                  }
                                              }
                                          }
@@ -337,12 +383,12 @@
                                                         font-weight: 400;
                                                         background: #ffffff;
                                                         width: 66px;
-                                                     &:focus{
+                                                     /* &:focus{
                                                          outline-color: #0095d9;
                                                      }
                                                      &:invalid{
                                                          outline-color: salmon;
-                                                     }
+                                                     } */
                                                  }
                                                 }
                                             }

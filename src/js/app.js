@@ -96,7 +96,7 @@ function switchTab(event, tabID) {
     /* tabLinks.forEach(element => {
         element.classList.remove('active')
     }); */
-    var tabToActive = '.tkn-manage-limits-screen ' + tabID;
+    var tabToActive = '.tkn-manage-limits-screen #' + tabID;
     getElement(tabToActive).classList.add('active');
     event.currentTarget.className += ' active';
 }
@@ -106,7 +106,12 @@ function openExitWithoutSaveModal() {
 }
 
 function closeModal(){
-    $('#tkn-exit-without-save-modal').removeClass('show')
+    $('#tkn-exit-without-save-modal').removeClass('show');
+}
+
+function exitWithoutSave(){
+    $('#tkn-exit-without-save-modal').removeClass('show');
+    window.location = 'tkn-card-wallet-dashboard.html';
 }
 
 /**
@@ -120,34 +125,48 @@ function onChangeCardMaster(umbrellaClass) {
     if (masterToggle.type == 'checkbox' && masterToggle.checked === false){
         for (var i = 0; i < slaveSections.length; i++) {
             var slaveToggle = slaveSections[i].querySelector('.slave-toggle');
-            slaveSections[i].classList.add('tkn-disabled', 'tkn-gray');
+            slaveSections[i].classList.add('tkn-disabled');
+            slaveSections[i].querySelector('.heading-text').classList.add('tkn-gray');
+            slaveSections[i].querySelector('.switch').classList.add('tkn-gray');
+            slaveSections[i].querySelector('.switch-disclaimer').classList.add('show');
             if (slaveToggle.type == 'checkbox')
                 slaveToggle.checked = false;
         }
         getElement('.tkn-tab-card .'+umbrellaClass+' .master .sub-text').classList.add('tkn-gray');
+        getElement('.tkn-tab-card .'+umbrellaClass+' .master .heading-text').classList.add('tkn-gray');
     }else{
         for (var i = 0; i < slaveSections.length; i++) {
             var slaveToggle = slaveSections[i].querySelector('.slave-toggle');
-            slaveSections[i].classList.remove('tkn-disabled', 'tkn-gray');
+            slaveSections[i].classList.remove('tkn-disabled');
+            slaveSections[i].querySelector('.heading-text').classList.remove('tkn-gray');
+            slaveSections[i].querySelector('.switch').classList.remove('tkn-gray');
+            slaveSections[i].querySelector('.switch-disclaimer').classList.remove('show');
+
             if (slaveToggle.type == 'checkbox')
                 slaveToggle.checked = true;
         }
         getElement('.tkn-tab-card .'+umbrellaClass+' .master .sub-text').classList.remove('tkn-gray');
+        getElement('.tkn-tab-card .'+umbrellaClass+' .master .heading-text').classList.remove('tkn-gray');
     }
 }   
 
 function onChangeSlave(event, selector, umbrellaClass){
     var checkBoxParent = getElement('.'+selector), checkBox = event.currentTarget,
-        slaveSections = document.querySelectorAll('.'+umbrellaClass+' .slave');
+        slaveSections = document.querySelectorAll('.'+umbrellaClass+' .slave'),
+        masterToggle = getElement('.'+umbrellaClass+' .master-toggle');
     if (checkBox.checked){
-        checkBoxParent.classList.remove('tkn-gray');
+        checkBoxParent.querySelector('.heading-text').classList.remove('tkn-gray');
+        if(!masterToggle.checked){
+            masterToggle.checked = true;
+            getElement('.'+umbrellaClass+' .master .sub-text').classList.remove('tkn-gray');
+            getElement('.'+umbrellaClass+' .master .heading-text').classList.remove('tkn-gray');
+        }
     }else{
-        checkBoxParent.classList.add('tkn-gray');
+        checkBoxParent.querySelector('.heading-text').classList.add('tkn-gray');
         // if all slaves are toggled off then turn master off
-        var slaves = document.querySelectorAll('.'+umbrellaClass+' .slave .slave-toggle');
-        var masterToggle = getElement('.'+umbrellaClass+' .master-toggle'), every = 0;
+        var slaves = document.querySelectorAll('.'+umbrellaClass+' .slave .slave-toggle'), every = 0;
 
-        for (var i=0; i<slaves.length; i++){
+        /* for (var i=0; i<slaves.length; i++){
             if (slaves[i].type == 'checkbox' && !slaves[i].checked){
                 every += 1;
             }
@@ -155,12 +174,13 @@ function onChangeSlave(event, selector, umbrellaClass){
         if(every == slaves.length){
             masterToggle.checked = false;
             getElement('.'+umbrellaClass+' .master .sub-text').classList.add('tkn-gray');
+            getElement('.'+umbrellaClass+' .master .heading-text').classList.add('tkn-gray');
 
             for (var i = 0; i < slaveSections.length; i++) {
                 var slaveToggle = slaveSections[i].querySelector('.slave-toggle');
-                slaveSections[i].classList.add('tkn-disabled', 'tkn-gray');
+                slaveSections[i].querySelector('.heading-text').classList.add('tkn-gray');
             }
-        }
+        } */
         
         
     }
@@ -231,12 +251,20 @@ function validateInputMax(event, max){
 }
 
 function applyChanges(){
-    /* var limitCountInputs = document.querySelectorAll('#digital-spends .limit-count input'), valid = true;
-    limitCountInputs.forEach(input => {
+    var limitCountInputs = document.querySelectorAll('#digital-spends .limit-count input'), valid = true;
+    for(var i=0; i<limitCountInputs.length; i++){
+        if(!limitCountInputs[i].checkValidity()){
+            valid = false;
+            $(limitCountInputs[i]).parent('div').css('border-color','salmon');
+
+        }
+    }
+    /* limitCountInputs.forEach(input => {
             if(!input.checkValidity())
                 valid = false;
-        });
-    if(valid) */
+                
+        }); */
+    if(valid)
     window.location='tkn-changes-successful.html';
 
 }
