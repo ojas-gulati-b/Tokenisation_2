@@ -233,11 +233,21 @@ function changeNonPinCountLimit(event){
 function changeViewOnLimitChange(umbrellaClass, limit, toggleStatus){
     var limitLabel = getElement('.'+umbrellaClass+' .limit-count .new .input-label .count');
     var disclaimer = getElement('#digital-spends .disclaimer span');
+    var internationalDiscElements= document.querySelectorAll('#digital-spends .international-off-disc');
     limitLabel.innerHTML = limit;
-    if(toggleStatus)
+    if(toggleStatus){
         disclaimer.innerHTML = 'Disabling international spends will affect your max limits for non-PIN based Contactless POS transactions';
-    else
-        disclaimer.innerHTML = 'Enabling international spends will affect your max limits for non-PIN based Contactless POS transactions';
+        for(var i=0; i<internationalDiscElements.length; i++){
+            internationalDiscElements[i].classList.add('tkn-hidden')
+        }
+    }
+    else{
+        disclaimer.innerHTML = 'Turn on International Spends to use these services outside India. Enabling international spends will affect your max limits for non-PIN based Contactless POS transactions';
+        for(var i=0; i<internationalDiscElements.length; i++){
+            internationalDiscElements[i].classList.remove('tkn-hidden')
+        }
+    }
+        
 }
 
 function isNumber(event){

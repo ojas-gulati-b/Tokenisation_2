@@ -233,11 +233,9 @@
                                             <div id="digital-spends" class="content tkn-tab-digital">
                                                 <section class="all-digital" >
                                                     <div class="toggle-section" style="padding-top: 40px;">
-                                                        <div class="heading-text"><span>All Digital Payment
-                                                                Transactions</span></div>
-                                                        <div class=" sub-text">
-                                                            <span>All PIN/OTP non PIN/OTP based international & domestic
-                                                                spends on Samsung Pay and SBI Card Pay</span>
+                                                        <div class="heading-text"><span>Manage All Tokenized Payments</span></div>
+                                                        <div class="sub-text" style="margin-top: 10px">
+                                                            <span>Set limits for payments using Card Tokenization Services (e.g. Samsung Pay, SBI Card Pay) for Trxns like NFC, Bharat QR, In-app, MST, etc.</span>
                                                         </div>
                                                     </div>
                                                 </section>
@@ -245,7 +243,7 @@
                                                 <section class="all-online non-pin tkn-text">
                                                     <div class="toggle-section master">
                                                         <div class="flex flex-sb">
-                                                            <span class="">Non-PIN based Transactions</span>
+                                                            <span class="">Transactions which do not require OTP or PIN</span>
                                                             <label class="switch">
                                                                 <input id="master-non-pin" type="checkbox"
                                                                     onclick="onChangeDigitalMaster('non-pin')" checked
@@ -254,14 +252,23 @@
                                                                 <span class="slider round"></span>
                                                             </label>
                                                         </div>
+                                                        <div class="sub-text" style="margin-top: 10px">
+                                                            <span>Set limits for POS and Online Tokenized Trxns. done within and outside India without using OTP or
+                                                                PIN. 
+                                                            </span>
+                                                            <span class="international-off-disc tkn-hidden">International Trxns. on your card are turned OFF.</span>
+                                                        </div>
                                                     </div>
                                                     <div class="tkn-divider"></div>
                                                     <div class="toggle-section limit-amount">
                                                         <div class="sub-toggle-section">
-                                                            <span class="">Single Transaction Limit</span>
+                                                            <span class="">Single Transaction Spend Limit</span>
+                                                            <div class=" sub-text">
+                                                                <span>Please enter limit values in increments of 100</span>
+                                                            </div>
                                                             <div class="flex tkn-space-top-20 set-limit current">
                                                                 <div class="input-label">
-                                                                    <span>Current net limit:</span>
+                                                                    <span>Current limit:</span>
                                                                 </div>
                                                                 <div class="limit flex">
                                                                     <img class="rupee"
@@ -273,7 +280,7 @@
                                                             </div>
                                                             <div class="flex flex-ac tkn-space-top-20 set-limit new">
                                                                 <div class="input-label">
-                                                                    <span>Set new limit:</span>
+                                                                    <span>New limit:</span>
                                                                 </div>
                                                                 <div class="limit ">
                                                                     <div class="value input flex flex-ac">
@@ -293,8 +300,7 @@
                                                     <div class="tkn-divider"></div>
                                                     <div class="toggle-section limit-count">
                                                         <div class="sub-toggle-section">
-                                                            <div class="heading-text"><span class="">No. of transactions
-                                                                    per day</span></div>
+                                                            <div class="heading-text"><span class="">Number of Transactions per day</span></div>
                                                             <div class="flex tkn-space-top-20 set-limit current">
                                                                 <div class="input-label">
                                                                     <span>Current Count:</span>
@@ -307,7 +313,7 @@
                                                             </div>
                                                             <div class="flex flex-ac tkn-space-top-20 set-limit new">
                                                                 <div class="input-label">
-                                                                    <span>Set New Count (Max: <span
+                                                                    <span>New Count (Up to: <span
                                                                             class="count">10</span>):</span>
                                                                     <!-- <span class="info"></span> -->
                                                                 </div>
@@ -322,9 +328,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="disclaimer tkn-space-top-30">
-                                                                <span>Disabling international spends will affect max
-                                                                    limits for non-PIN based Contactless POS
-                                                                    transactions</span>
+                                                                <span>Disabling international spends will affect your max limits for non-PIN based Contactless POS transactions</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -334,7 +338,7 @@
                                                 <section class="all-online pin tkn-text">
                                                     <div class="toggle-section master">
                                                         <div class="flex flex-sb flex-ac">
-                                                            <span class="">PIN Based Transactions</span>
+                                                            <span class="">Transactions which require OTP or PIN</span>
                                                             <label class="switch">
                                                                 <input id="master-pin" type="checkbox"
                                                                     onclick="onChangeDigitalMaster('pin')" checked
@@ -343,15 +347,21 @@
                                                                 <span class="slider round"></span>
                                                             </label>
                                                         </div>
+                                                        <div class="sub-text" style="margin-top: 10px">
+                                                            <span>Set limits for POS and Online Tokenized Trxns. done within and outside India using OTP or PIN. </span>
+                                                            <span class="international-off-disc tkn-hidden">International Trxns. on your card are turned OFF.</span>
+                                                        </div>
                                                     </div>
                                                     <div class="tkn-divider"></div>
                                                     <div class="toggle-section limit-amount">
                                                         <div class="sub-toggle-section">
-                                                            <div class="heading-text"><span class="">Single Transaction
-                                                                    Limit</span></div>
+                                                            <div class="heading-text"><span class="">Single Transaction Spend Limit</span></div>
+                                                            <div class=" sub-text">
+                                                                <span>Please enter limit values in increments of 1000</span>
+                                                            </div>
                                                             <div class="flex tkn-space-top-20 set-limit current">
                                                                 <div class="input-label">
-                                                                    <span>Current Net Limit:</span>
+                                                                    <span>Current Limit:</span>
                                                                 </div>
                                                                 <div class="limit flex flex-ac">
                                                                     <img class="rupee"
@@ -363,7 +373,7 @@
                                                             </div>
                                                             <div class="flex flex-ac tkn-space-top-20 set-limit new">
                                                                 <div class="input-label flex flex-ac">
-                                                                    <span>Set New Limit:</span>
+                                                                    <span>New Limit:</span>
                                                                 </div>
                                                                 <div class="limit ">
 
@@ -385,8 +395,7 @@
                                                     <div class="tkn-divider"></div>
                                                     <div class="toggle-section limit-count">
                                                         <div class="sub-toggle-section">
-                                                            <div class="heading-text"><span class="">No. of transactions
-                                                                    per day</span></div>
+                                                            <div class="heading-text"><span class="">Number of Transactions per day</span></div>
                                                             <div class="flex tkn-space-top-20 set-limit current">
                                                                 <div class="input-label">
                                                                     <span>Current Count:</span>
@@ -399,7 +408,7 @@
                                                             </div>
                                                             <div class="flex flex-ac tkn-space-top-20 set-limit new">
                                                                 <div class="input-label">
-                                                                    <span>Set New Count:</span>
+                                                                    <span>New Count (Upto 99):</span>
                                                                     <!-- <span class="info">(Max: 99)</span> -->
                                                                 </div>
                                                                 <div class="limit ">
