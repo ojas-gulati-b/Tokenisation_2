@@ -30,7 +30,7 @@
   margin-top: 40px;
 }
 .tkn-manage-limits-screen .tkn-manage-limits-header {
-  padding: 30px 50px 30px 25px;
+  padding: 30px 30px 30px 25px;
   position: relative;
 }
 @media (max-width: 767px) {
@@ -47,7 +47,7 @@
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-header .tkn-tabs {
   display: flex;
-  padding: 0 50px 0 25px;
+  padding: 0 30px 0 25px;
   height: 30px;
   border-bottom: 1px solid #dddddd;
 }
@@ -176,7 +176,7 @@
   box-shadow: 0 0 5px 0 #d5d5ea;
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section {
-  padding: 30px 50px 30px 25px;
+  padding: 30px 30px 30px 25px;
 }
 @media (max-width: 767px) {
   .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .content section .toggle-section {
@@ -336,7 +336,7 @@
   font-weight: normal;
 }
 .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .tkn-button-group {
-  padding: 0 50px 0 25px;
+  padding: 0 30px 0 25px;
 }
 @media (max-width: 767px) {
   .tkn-manage-limits-screen .tkn-spends-section .tabs-body .content-wrapper .tab-content .tkn-button-group {
