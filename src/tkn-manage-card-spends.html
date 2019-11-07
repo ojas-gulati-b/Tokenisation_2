@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manage Limits</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/kcp.css" />
+    <link rel="stylesheet" type="text/css" href="css/helper.css" />
+    <link rel="stylesheet" type="text/css" href="css/usportal.css" />
+    <link rel="stylesheet" type="text/css" href="css/d2i.css" />
+    <link rel="stylesheet" type="text/css" href="css/tkn-manage-limits.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/nouislider.css" />
+    <script src="js/vendor/nouislider.js" type="text/javascript"></script>
+    <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-header tkn-header">
+            <div class="ribbon clearfix">
+                <p class="today"><i class="fa fa-calendar"></i>21 Sep 2016</p>
+                <section class="quickLink-wrapper">
+                    <!-- <a href="https://www.sbicard.com/creditcards/app/dashboard#nav" class="nav-trigger"
+                        id="quickLink-nav">
+                        Quick Links
+                    </a> -->
+                </section>
+            </div>
+            <nav class="top-nav tkn">
+                <a href="javascript:void(0);" class="logo">SBI Card</a>
+                <div class="mobile-user-info mobile-only">
+                    <a href="https://www.sbicard.com/creditcards/app/dashboard#" class="user-menu tkn">
+                        <span class="greet">Welcome</span>
+                        <div class="elips">VIVEK MEHTA</div>
+                        <span class="caret"></span>
+                    </a>
+                </div>
+                <ul class="menu">
+                    <!-- <li><a href="#">Contact Us</a></li> -->
+                    <li><a href="#">Log out</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu mobile-only">
+                <ul class="primary-links">
+                    <li id="dashboard" onClick="toggleMenu()">
+                        <a class="nav-trigger">
+                            <i class="fa fa-bars"></i><br />
+                            Flexipay
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.sbicard.com/creditcards/app/dashboard#" class="logout-link"
+                            onclick="logoutForm.submit();">
+                            <i class="fa fa-power-off"></i><br />
+                            Logout
+                        </a>
+                    </li>
+                    <ul class="d2i-menu-toggle tkn">
+                        <!-- <li class="">
+                            <a href="">
+                                <img src="./img/Group3-black.svg" alt="">
+                                Services
+
+                            </a>
+                            <ul class="tkn-sub-menu">
+                                <li class="active">
+                                    <a href="">
+                                        Dispute Charge
+
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="tkn-track.html">
+                                        Track Disputes
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+ -->
+                        <div class="d2i-menu-overlay" onClick="toggleMenu()"></div>
+                    </ul>
+                </ul>
+            </div>
+        </header>
+        <div class="content clearfix">
+            <div class="sidebar" style="height: 270vh;">
+                <article class="user-info">
+                    <div class="content-wrap">
+                        <h3><span>Welcome</span>VIVEK MEHTA</h3>
+                        <div>Last Login: 09 Sep 2016, 01.45 PM</div>
+                        <div>
+                            Email: <span id="email-address">vmXXXXXXXXXXX@gmail.com</span>
+                        </div>
+                        <div>Mobile: <span id="mobile-number">XXXXXX9191</span></div>
+                    </div>
+                </article>
+                <div class="block">
+                    <ul class="tab-menu tkn" style="margin-top: 6px;">
+                        <li class="">
+                            <a href="" style="background: #444444;">
+                                Card and Wallet Limits
+                            </a>
+                            <ul class="tkn-sub-menu">
+                                <li class="active ">
+                                    <a href="">
+                                        Manage Limits
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main">
+                <div class="tkn-divider"></div>
+                <div id="manage-limits-screen" class="tkn-manage-limits-screen">
+                    <div class="">
+                        <div class="tkn-manage-limits-header">
+                            <div class="main-text">
+                                <span>Manage Limits</span>
+                            </div>
+                            <!--  <div class="sub-text sbi-text gray">
+                                    <span>For card ending in 1234 </span>
+                                   </div> -->
+                        </div>
+                        <div class="tkn-spends-section">
+                            <!-- <div class="tabs-header ">
+                                <div class="tkn-tabs flex">
+                                    <div class="tkn-tab active" onclick="switchTab(event, 'card-spends')">
+                                        <span>Card Spends</span>
+                                    </div>
+                                    <div class="tkn-tab " onclick="switchTab(event, 'digital-spends')">
+                                        <span>Digital Spends</span>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="tkn-divider"></div>
+                            <div class="tabs-body">
+                                <div class="sbi-wrapper">
+                                    <div class="content-wrapper">
+                                        <div class="tab-content" id="tab-content-form" >
+                                            <div id="card-spends" class="content tkn-tab-card active">
+                                                <section class="all-international sbi-text">
+                                                    <div class="toggle-section master" style="padding-top: 40px;">
+                                                        <div class="flex flex-sb flex-ac ">
+                                                            <div class="heading-text semi-bold"><span>All International Transactions</span></div>
+                                                            <label class="switch">
+                                                                <input id="master-international" type="checkbox" checked
+                                                                    onclick="onChangeCardMaster('all-international')"
+                                                                    checked
+                                                                    onchange="enableApplyButton('card');changeNonPinCountLimit(event)"
+                                                                    class="master-toggle">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="sub-text">
+                                                            <span>Includes international subscription platforms like
+                                                                Netflix,
+                                                                Spotify, and Apple Music. </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tkn-divider"></div>
+                                                    <div class="toggle-section slave atm-international ">
+                                                        <div class="sub-toggle-section flex flex-sb flex-ac">
+                                                            <div class="heading-text"><span>International ATM transactions</span></div>
+                                                            <label class="switch">
+                                                                <input id="atm-international" type="checkbox" class="slave-toggle" checked
+                                                                    onclick="onChangeSlave(event, 'atm-international', 'all-international')" onchange="enableApplyButton('card')">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="switch-disclaimer"><span>To activate turn on All International Transactions</span></div>
+                                                    </div>
+                                                    <div class="tkn-divider"></div>
+                                                </section>
+                                                <section class="all-online space-top-10 sbi-text">
+                                                    <div class="toggle-section master">
+                                                        <div class="flex flex-sb flex-ac">
+                                                            <div class="heading-text semi-bold"><span>All online transactions</span></div>
+                                                            <label class="switch">
+                                                                <input id="master-online" type="checkbox" checked
+                                                                    onclick="onChangeCardMaster('all-online')" checked
+                                                                    onchange="enableApplyButton('card')"
+                                                                    class="master-toggle">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class=" sub-text">
+                                                            <span>Includes all international and domestic online
+                                                                transactions
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tkn-divider"></div>
+                                                    <div class="toggle-section slave domestic-online">
+                                                        <div class="sub-toggle-section flex flex-sb flex-ac">
+                                                            <div class="heading-text"><span >Domestic Online transactions</span></div>
+                                                            <label class="switch">
+                                                                <input id="domestic-online" type="checkbox" class="slave-toggle" checked
+                                                                    onclick="onChangeSlave(event, 'domestic-online', 'all-online')" onchange="enableApplyButton('card')">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="switch-disclaimer"><span>To activate turn on All Online Transactions</span></div>
+                                                    </div>
+                                                    <div class="tkn-divider"></div>
+                                                    <div class="toggle-section slave international-online ">
+                                                        <div class="sub-toggle-section flex flex-sb flex-ac">
+                                                            <div class="heading-text"><span >International Online transactions</span></div>
+                                                            <label class="switch">
+                                                                <input id="international-online" type="checkbox" class="slave-toggle" checked
+                                                                    onclick="onChangeSlave(event, 'international-online', 'all-online')" onchange="enableApplyButton('card')">
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="switch-disclaimer"><span>To activate turn on All Online Transactions</span></div>
+                                                    </div>
+                                                    <div class="tkn-divider"></div>
+                                                </section>
+                                                <!--  <div class="sbi-button-group vertical-sm space-top-40">
+                                                    <button class="apply-digital sbi-button primary"
+                                                        onclick="goToScreen('applied-changes-screen')" disabled="disabled">Apply
+                                                        Changes</button>
+                                                    <a class="sbi-link underlined cancel-changes"
+                                                        onclick="openExitWithoutSaveModal()">Cancel</a>
+                                                </div> -->
+                                            </div>
+                                            <div class="tkn-button-group card tkn-space-top-30">
+                                                <button class="apply-digital tkn-button primary"
+                                                    onclick="applyChanges();">
+                                                    Apply
+                                                </button>
+                                                <button class="cancel-changes tkn-button secondary"
+                                                    onclick="openExitWithoutSaveModal()">
+                                                    Cancel
+                                                </button>
+                                                <!-- <a class="sbi-link underlined cancel-changes"
+                                                                                                    onclick="openExitWithoutSaveModal()">Cancel</a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Exit without save Modal-->
+                                <div class="d2i-modal" id="tkn-exit-without-save-modal">
+                                    <div class="d2i-modal-overlay" onClick="closeModal()"></div>
+                                    <div class="d2i-modal-body">
+                                        <div class="close-modal-icon" onclick="closeModal()"><img
+                                                src="assets/images/exit-icon.png" alt="close" /></div>
+                                        <h1 class="d2i-heading">You have unsaved changes</h1>
+                                        <div class="tkn-modal-main-content">
+                                            <p style="margin-bottom:25px;">Are you sure you want to exit without saving?
+                                                </br>
+                                                </br>
+                                                Choose “Apply changes” to update your card details. Choose “Exit without
+                                                saving” to discard your changes.
+
+                                            </p>
+                                            <div class="tkn-button-group">
+                                                <button class="apply-digital tkn-button primary"
+                                                    onclick="window.location='tkn-changes-successful.html'">
+                                                    Apply changes
+                                                </button>
+                                                <button class="cancel-changes tkn-button secondary"
+                                                    style="margin-left: 0;" onclick="exitWithoutSave()">
+                                                    Exit without saving
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/card-spends.js"></script>
+</body>
+
+</html>
