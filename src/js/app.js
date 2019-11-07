@@ -434,6 +434,15 @@ function disableApplyButton(){
         });
  }
 
+ function setWalletHeadingWidth(){
+    $(window).resize(function(){
+        if($('.tkn-limit-box-row .row-1')){
+            var refWidth = $('.tkn-limit-box-row .row-1').width();
+            $('.spends-header').width(refWidth);
+        }
+     });
+ }
+
 // Run on Initialization
 function init(){
     onChangeCardMaster('all-online', 'desktop'); onChangeCardMaster('all-online', 'mobile');

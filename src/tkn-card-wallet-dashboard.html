@@ -123,6 +123,13 @@
                 </div>
                 <div class="tkn-divider"></div>
                 <div class="tkn-limits-container">
+                    <div class="spends-header">
+                        <div class="heading">Card Spends</div>
+                        <div class="spend-launcher" onclick="window.location='tkn-manage-limits.html'">
+                            <img src="assets/images/manage-limits-launcher.png" alt="manage" />
+                            <span>Manage limits</span>
+                        </div>
+                    </div>
                     <div class="tkn-limit-box-row row-1">
                         <div class="tkn-limit-box">
                             <div class="tkn-limit-tooltip">
@@ -167,6 +174,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="spends-header" style="margin: 10px 0 20px;">
+                        <div class="heading">Digital Spends</div>
+                        <div class="spend-launcher" onclick="window.location='tkn-manage-limits.html'">
+                            <img src="assets/images/manage-limits-launcher.png" alt="manage" />
+                            <span>Manage limits</span>
+                        </div>
+                    </div>
                     <div class="tkn-limit-box-row row-2">
                         <div class="tkn-limit-box">
                             <div class="tkn-limit-tooltip">
@@ -205,11 +219,11 @@
                     </div>
                 </div>
                 <div class="tkn-divider"></div>
-                <div class="tkn-manage-limits-button ">
+                <!-- <div class="tkn-manage-limits-button ">
                     <button class="tkn-button primary " onclick="window.location='tkn-manage-limits.html'">
                         Manage limits
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -217,6 +231,15 @@
         $('#tkn-dropdown .dropdown-menu.options > li > a').on('click', function () {
             $('.dropdown-toggle.selected-option #tkn-card-number').text(this.text)
         })
+    </script>
+    <script>
+        /* $(window).resize(function () {
+            var elem = $('.tkn-limit-box')
+            if ($('.tkn-limit-box')) {
+                var refWidth = $('.tkn-limit-box').width();
+                $('.spends-header').width(refWidth*2 + 20);
+            }
+        }); */
     </script>
 </body>
 

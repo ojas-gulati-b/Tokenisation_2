@@ -53,6 +53,34 @@
         padding: 30px 15px 10px 15px;
     }
 
+    .spends-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        @media (min-width: 860px) {
+            width: 564px;
+        }
+       
+        .heading{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .spend-launcher{
+            cursor: pointer;
+            img{
+                width: 12px;
+                margin-right: 5px;
+            }
+            span{
+                font-size: 14px;
+                font-weight: normal;
+                color: #0095d9;
+            }
+        }
+    }
+
     .tkn-limit-box-row{
         display: flex;
         flex-direction: row;
