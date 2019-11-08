@@ -67,6 +67,8 @@
   font-weight: 600;
 }
 .tkn-limits-container .spends-header .spend-launcher {
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 .tkn-limits-container .spends-header .spend-launcher img {

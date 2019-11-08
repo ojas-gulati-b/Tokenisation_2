@@ -217,7 +217,10 @@ function onChangeDigitalMaster(umbrellaClass, initialFire){
             
     }
 }
-
+/**
+ * 
+ * This function won't be used anymore after removal of spends tabs
+ */
 function changeNonPinCountLimit(event){
     var toggleStatus = event.currentTarget.checked;
     if(toggleStatus){
