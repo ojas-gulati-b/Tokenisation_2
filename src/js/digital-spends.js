@@ -1,3 +1,7 @@
+// Slider values (min/max) 
+// Set the min and max for each slider in these vars
+var sliderMinValueNonPin = 500, sliderMaxValueNonPin = 2000, sliderMinValuePin = 1000, sliderMaxValuePin = 4000;
+
 /**
  * Range Slider Code
  */
@@ -111,6 +115,39 @@ inputFieldPin.addEventListener('keydown', function (e) {
 // Disable the pseudo handle
 /* var origins = document.getElementsByClassName('noUi-origin');
 origins[0].setAttribute('disabled', true); */
+
+
+function onChangeDigitalMaster(umbrellaClass, initialFire){
+    var section = getElement('.'+umbrellaClass), toggle = getElement('.'+umbrellaClass+' .master-toggle');
+    var sectionToDisable1 = section.querySelector('.limit-amount'), sectionToDisable2 = section.querySelector('.limit-count');
+    if(!toggle.checked){
+        section.classList.add('tkn-gray');
+        sectionToDisable1.classList.add('tkn-disabled', 'tkn-gray');
+        sectionToDisable2.classList.add('tkn-disabled', 'tkn-gray');
+    }else{
+        section.classList.remove('tkn-gray');
+        sectionToDisable1.classList.remove('tkn-disabled', 'tkn-gray');
+        sectionToDisable2.classList.remove('tkn-disabled', 'tkn-gray');
+
+        // Slider and the input values should come to their max values when the swutch ios turned off and on
+        var sliderInput = getElement('#tab-content-form #digital-spends .'+umbrellaClass+' #new-limit-'+umbrellaClass);
+        var countInput = getElement('#tab-content-form #digital-spends .'+umbrellaClass+' .limit-count .new .limit .limit-input');
+        if(!initialFire){
+            if(umbrellaClass == 'non-pin'){
+                //if non-pin
+                sliderNonPin.noUiSlider.set(sliderMaxValueNonPin);
+                sliderInput.value = sliderMaxValueNonPin;
+                countInput.value = nonPinCountLimit;
+            }else{
+                // if pin
+                sliderPin.noUiSlider.set(sliderMaxValuePin);
+                sliderInput.value = sliderMaxValuePin;
+                countInput.value = pinCountLimit;
+            }
+        }
+            
+    }
+}
 
 function init(){
     onChangeDigitalMaster('non-pin', true);

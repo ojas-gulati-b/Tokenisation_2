@@ -1,8 +1,5 @@
 /** Global Variables */
 var nonPinCountLimit = 5, pinCountLimit = 99, selectedCardID = '', carouselLoaded = false, changesMade = false;
-// Slider values (min/max) 
-// Set the min and max for each slider in these vars
-var sliderMinValueNonPin = 500, sliderMaxValueNonPin = 2000, sliderMinValuePin = 1000, sliderMaxValuePin = 4000;
 
 function getElement(selector) {
     return document.querySelector(selector);
@@ -80,6 +77,11 @@ function getElement(selector) {
     }
     
 } */
+
+/**
+ * 
+ * This function is not in use in UI anymore after removal of spends tabs
+ */
 function switchTab(event, tabID) {
     var tabs = document.querySelectorAll('.tkn-manage-limits-screen .tab-content .content'),
         tabLinks = document.querySelectorAll('.tkn-manage-limits-screen .tabs-header .tkn-tabs .tkn-tab');
@@ -118,108 +120,10 @@ function exitWithoutSave(){
  * Establish master slave relationship between card spends switches
  */
 
-function onChangeCardMaster(umbrellaClass) {
-    var slaveSelector = '.tkn-tab-card .'+umbrellaClass+ ' .slave', masterToggleSelector = '.tkn-tab-card .'+umbrellaClass+' .master-toggle';
-    var masterToggle = getElement(masterToggleSelector);
-    var slaveSections = document.querySelectorAll(slaveSelector);
-    if (masterToggle.type == 'checkbox' && masterToggle.checked === false){
-        for (var i = 0; i < slaveSections.length; i++) {
-            var slaveToggle = slaveSections[i].querySelector('.slave-toggle');
-            slaveSections[i].classList.add('tkn-disabled');
-            slaveSections[i].querySelector('.heading-text').classList.add('tkn-gray');
-            slaveSections[i].querySelector('.switch').classList.add('tkn-gray');
-            slaveSections[i].querySelector('.switch-disclaimer').classList.add('show');
-            if (slaveToggle.type == 'checkbox')
-                slaveToggle.checked = false;
-        }
-        getElement('.tkn-tab-card .'+umbrellaClass+' .master .sub-text').classList.add('tkn-gray');
-        getElement('.tkn-tab-card .'+umbrellaClass+' .master .heading-text').classList.add('tkn-gray');
-    }else{
-        for (var i = 0; i < slaveSections.length; i++) {
-            var slaveToggle = slaveSections[i].querySelector('.slave-toggle');
-            slaveSections[i].classList.remove('tkn-disabled');
-            slaveSections[i].querySelector('.heading-text').classList.remove('tkn-gray');
-            slaveSections[i].querySelector('.switch').classList.remove('tkn-gray');
-            slaveSections[i].querySelector('.switch-disclaimer').classList.remove('show');
 
-            if (slaveToggle.type == 'checkbox')
-                slaveToggle.checked = true;
-        }
-        getElement('.tkn-tab-card .'+umbrellaClass+' .master .sub-text').classList.remove('tkn-gray');
-        getElement('.tkn-tab-card .'+umbrellaClass+' .master .heading-text').classList.remove('tkn-gray');
-    }
-}   
-
-function onChangeSlave(event, selector, umbrellaClass){
-    var checkBoxParent = getElement('.'+selector), checkBox = event.currentTarget,
-        slaveSections = document.querySelectorAll('.'+umbrellaClass+' .slave'),
-        masterToggle = getElement('.'+umbrellaClass+' .master-toggle');
-    if (checkBox.checked){
-        checkBoxParent.querySelector('.heading-text').classList.remove('tkn-gray');
-        if(!masterToggle.checked){
-            masterToggle.checked = true;
-            getElement('.'+umbrellaClass+' .master .sub-text').classList.remove('tkn-gray');
-            getElement('.'+umbrellaClass+' .master .heading-text').classList.remove('tkn-gray');
-        }
-    }else{
-        checkBoxParent.querySelector('.heading-text').classList.add('tkn-gray');
-        // if all slaves are toggled off then turn master off
-        var slaves = document.querySelectorAll('.'+umbrellaClass+' .slave .slave-toggle'), every = 0;
-
-        /* for (var i=0; i<slaves.length; i++){
-            if (slaves[i].type == 'checkbox' && !slaves[i].checked){
-                every += 1;
-            }
-        }
-        if(every == slaves.length){
-            masterToggle.checked = false;
-            getElement('.'+umbrellaClass+' .master .sub-text').classList.add('tkn-gray');
-            getElement('.'+umbrellaClass+' .master .heading-text').classList.add('tkn-gray');
-
-            for (var i = 0; i < slaveSections.length; i++) {
-                var slaveToggle = slaveSections[i].querySelector('.slave-toggle');
-                slaveSections[i].querySelector('.heading-text').classList.add('tkn-gray');
-            }
-        } */
-        
-        
-    }
-}
-
-function onChangeDigitalMaster(umbrellaClass, initialFire){
-    var section = getElement('.'+umbrellaClass), toggle = getElement('.'+umbrellaClass+' .master-toggle');
-    var sectionToDisable1 = section.querySelector('.limit-amount'), sectionToDisable2 = section.querySelector('.limit-count');
-    if(!toggle.checked){
-        section.classList.add('tkn-gray');
-        sectionToDisable1.classList.add('tkn-disabled', 'tkn-gray');
-        sectionToDisable2.classList.add('tkn-disabled', 'tkn-gray');
-    }else{
-        section.classList.remove('tkn-gray');
-        sectionToDisable1.classList.remove('tkn-disabled', 'tkn-gray');
-        sectionToDisable2.classList.remove('tkn-disabled', 'tkn-gray');
-
-        // Slider and the input values should come to their max values when the swutch ios turned off and on
-        var sliderInput = getElement('#tab-content-form #digital-spends .'+umbrellaClass+' #new-limit-'+umbrellaClass);
-        var countInput = getElement('#tab-content-form #digital-spends .'+umbrellaClass+' .limit-count .new .limit .limit-input');
-        if(!initialFire){
-            if(umbrellaClass == 'non-pin'){
-                //if non-pin
-                sliderNonPin.noUiSlider.set(sliderMaxValueNonPin);
-                sliderInput.value = sliderMaxValueNonPin;
-                countInput.value = nonPinCountLimit;
-            }else{
-                // if pin
-                sliderPin.noUiSlider.set(sliderMaxValuePin);
-                sliderInput.value = sliderMaxValuePin;
-                countInput.value = pinCountLimit;
-            }
-        }
-            
-    }
-}
 /**
  * 
- * This function won't be used anymore after removal of spends tabs
+ * This function is not in use in UI anymore after removal of spends tabs
  */
 function changeNonPinCountLimit(event){
     var toggleStatus = event.currentTarget.checked;
@@ -233,6 +137,10 @@ function changeNonPinCountLimit(event){
         
 }
 
+/**
+ * 
+ * This function is not in use in UI anymore after removal of spends tabs
+ */
 function changeViewOnLimitChange(umbrellaClass, limit, toggleStatus){
     var limitLabel = getElement('.'+umbrellaClass+' .limit-count .new .input-label .count');
     var disclaimer = getElement('#digital-spends .disclaimer span');
