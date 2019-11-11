@@ -154,7 +154,7 @@
                                                                 <input id="master-international" type="checkbox" checked
                                                                     onclick="onChangeCardMaster('all-international')"
                                                                     checked
-                                                                    onchange="enableApplyButton('card');"
+                                                                    onchange="enableApplyButtonCard('card');"
                                                                     class="master-toggle">
                                                                 <span class="slider round"></span>
                                                             </label>
@@ -171,7 +171,7 @@
                                                             <div class="heading-text"><span>International ATM transactions</span></div>
                                                             <label class="switch">
                                                                 <input id="atm-international" type="checkbox" class="slave-toggle" checked
-                                                                    onclick="onChangeSlave(event, 'atm-international', 'all-international')" onchange="enableApplyButton('card')">
+                                                                    onclick="onChangeSlave(event, 'atm-international', 'all-international')" onchange="enableApplyButtonCard('card')">
                                                                 <span class="slider round"></span>
                                                             </label>
                                                         </div>
@@ -186,7 +186,7 @@
                                                             <label class="switch">
                                                                 <input id="master-online" type="checkbox" checked
                                                                     onclick="onChangeCardMaster('all-online')" checked
-                                                                    onchange="enableApplyButton('card')"
+                                                                    onchange="enableApplyButtonCard('card')"
                                                                     class="master-toggle">
                                                                 <span class="slider round"></span>
                                                             </label>
@@ -203,7 +203,7 @@
                                                             <div class="heading-text"><span >Domestic Online transactions</span></div>
                                                             <label class="switch">
                                                                 <input id="domestic-online" type="checkbox" class="slave-toggle" checked
-                                                                    onclick="onChangeSlave(event, 'domestic-online', 'all-online')" onchange="enableApplyButton('card')">
+                                                                    onclick="onChangeSlave(event, 'domestic-online', 'all-online')" onchange="enableApplyButtonCard('card')">
                                                                 <span class="slider round"></span>
                                                             </label>
                                                         </div>
@@ -215,7 +215,7 @@
                                                             <div class="heading-text"><span >International Online transactions</span></div>
                                                             <label class="switch">
                                                                 <input id="international-online" type="checkbox" class="slave-toggle" checked
-                                                                    onclick="onChangeSlave(event, 'international-online', 'all-online')" onchange="enableApplyButton('card')">
+                                                                    onclick="onChangeSlave(event, 'international-online', 'all-online')" onchange="enableApplyButtonCard('card')">
                                                                 <span class="slider round"></span>
                                                             </label>
                                                         </div>
@@ -237,7 +237,7 @@
                                                     Apply
                                                 </button>
                                                 <button class="cancel-changes tkn-button secondary"
-                                                    onclick="openExitWithoutSaveModal()">
+                                                    onclick="cancelChangesCard()">
                                                     Cancel
                                                 </button>
                                                 <!-- <a class="sbi-link underlined cancel-changes"

@@ -116,9 +116,7 @@ function exitWithoutSave(){
     window.location = 'tkn-card-wallet-dashboard.html';
 }
 
-/**
- * Establish master slave relationship between card spends switches
- */
+
 
 
 /**
@@ -191,31 +189,6 @@ function applyChanges(){
 }
 
 
-// 
- function enableApplyButton(screen){
-    changesMade = true;
-    var buttons = document.querySelectorAll('.tkn-button-group.' + screen + ' .apply-digital');
-    for(var i=0; i<buttons.length; i++){
-        buttons[i].removeAttribute("disabled");
-    }
-    var cancelLinks = document.querySelectorAll('.tkn-button-group.' + screen + ' .cancel-changes');
-    for(var i=0; i<cancelLinks.length; i++){
-        cancelLinks[i].classList.remove('tkn-disabled');
-        cancelLinks[i].removeAttribute("disabled");
-    }
-}
-
-function disableApplyButton(screen){
-    var buttons = document.querySelectorAll('.tkn-button-group.' + screen + ' .apply-digital');
-    for(var i=0; i<buttons.length; i++){
-        buttons[i].setAttribute("disabled", true);
-    }
-    var cancelLinks = document.querySelectorAll('.tkn-button-group.' + screen + ' .cancel-changes');
-    for(var i=0; i<cancelLinks.length; i++){
-        cancelLinks[i].classList.add('tkn-disabled');
-        cancelLinks[i].setAttribute("disabled", true);
-    }
-}
 
 /**
  * Handle input focus functionanlity

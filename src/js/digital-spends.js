@@ -1,6 +1,6 @@
 // Slider values (min/max) 
 // Set the min and max for each slider in these vars
-var sliderMinValueNonPin = 500, sliderMaxValueNonPin = 2000, sliderMinValuePin = 1000, sliderMaxValuePin = 4000;
+var sliderMinValueNonPin = 500, sliderMaxValueNonPin = 2000, sliderMinValuePin = 1000, sliderMaxValuePin = 4000, changesMadeDigital = false, initialLoad1 = true, initialLoad2 = true;
 
 /**
  * Range Slider Code
@@ -69,7 +69,12 @@ sliderNonPin.noUiSlider.on('update', function (values, handle) {
         inputField1.value = Math.round(value);
     } */
     inputFieldNonPin.value = Math.round(value);
-    enableApplyButton('digital');
+    if(initialLoad1){
+        initialLoad1 = false;
+    }else{
+        enableApplyButtonDigital('digital');
+    }
+    
 });
 
 // update slider when user clicks outside the box after entering the value
@@ -96,7 +101,11 @@ sliderPin.noUiSlider.on('update', function (values, handle) {
         inputField2.value = Math.round(value);
     } */
     inputFieldPin.value = Math.round(value);
-    enableApplyButton('digital');
+    if(initialLoad2){
+        initialLoad2 = false;
+    }else{
+        enableApplyButtonDigital('digital');
+    }
 });
 
 // update slider when user clicks outside the box after entering the value
@@ -129,7 +138,7 @@ function onChangeDigitalMaster(umbrellaClass, initialFire){
         sectionToDisable1.classList.remove('tkn-disabled', 'tkn-gray');
         sectionToDisable2.classList.remove('tkn-disabled', 'tkn-gray');
 
-        // Slider and the input values should come to their max values when the swutch ios turned off and on
+        // Slider and the input values should come to their max values when the swutch is turned off and on
         var sliderInput = getElement('#tab-content-form #digital-spends .'+umbrellaClass+' #new-limit-'+umbrellaClass);
         var countInput = getElement('#tab-content-form #digital-spends .'+umbrellaClass+' .limit-count .new .limit .limit-input');
         if(!initialFire){
@@ -149,10 +158,45 @@ function onChangeDigitalMaster(umbrellaClass, initialFire){
     }
 }
 
+function cancelChangesDigital(){
+    if(!changesMadeDigital){
+        window.location = 'tkn-card-wallet-dashboard.html';
+    }else {
+        openExitWithoutSaveModal();
+    }
+}
+
+
+// 
+ function enableApplyButtonDigital(screen){
+    changesMadeDigital = true;
+    var buttons = document.querySelectorAll('.tkn-button-group.' + screen + ' .apply-digital');
+    for(var i=0; i<buttons.length; i++){
+        buttons[i].removeAttribute("disabled");
+    }
+    var cancelLinks = document.querySelectorAll('.tkn-button-group.' + screen + ' .cancel-changes');
+    for(var i=0; i<cancelLinks.length; i++){
+        cancelLinks[i].classList.remove('tkn-disabled');
+        cancelLinks[i].removeAttribute("disabled");
+    }
+}
+
+function disableApplyButtonDigital(screen){
+    var buttons = document.querySelectorAll('.tkn-button-group.' + screen + ' .apply-digital');
+    for(var i=0; i<buttons.length; i++){
+        buttons[i].setAttribute("disabled", true);
+    }
+    /* var cancelLinks = document.querySelectorAll('.tkn-button-group.' + screen + ' .cancel-changes');
+    for(var i=0; i<cancelLinks.length; i++){
+        cancelLinks[i].classList.add('tkn-disabled');
+        cancelLinks[i].setAttribute("disabled", true);
+    } */
+}
+
 function init(){
     onChangeDigitalMaster('non-pin', true);
     onChangeDigitalMaster('pin', true);
-    disableApplyButton('digital');
+    disableApplyButtonDigital('digital');
     inputFocus('.limit-input');
 
 }

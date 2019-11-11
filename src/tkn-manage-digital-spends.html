@@ -153,7 +153,7 @@
                                                             <label class="switch">
                                                                 <input id="master-non-pin" type="checkbox"
                                                                     onclick="onChangeDigitalMaster('non-pin')" checked
-                                                                    onchange="enableApplyButton('digital')"
+                                                                    onchange="enableApplyButtonDigital('digital')"
                                                                     class="master-toggle">
                                                                 <span class="slider round"></span>
                                                             </label>
@@ -197,7 +197,7 @@
                                                                         <div><span class="rupee">₹</span></div>
                                                                         <input value="500" type="text"
                                                                             class="limit-input" id="new-limit-non-pin"
-                                                                            onchange="enableApplyButton('digital')" required
+                                                                            onchange="enableApplyButtonDigital('digital')" required
                                                                             onkeypress="return isNumber(event)" />
                                                                     </div>
                                                                 </div>
@@ -232,7 +232,7 @@
                                                                 <div class="limit">
                                                                     <div class="value input flex flex-ac">
                                                                         <input value="3" type="text" class="limit-input"
-                                                                            onchange="enableApplyButton('digital')"
+                                                                            onchange="enableApplyButtonDigital('digital')"
                                                                             pattern="([0-9]|10)"
                                                                             onkeypress="return isNumber(event)"
                                                                             required />
@@ -256,7 +256,7 @@
                                                             <label class="switch">
                                                                 <input id="master-pin" type="checkbox"
                                                                     onclick="onChangeDigitalMaster('pin')" checked
-                                                                    onchange="enableApplyButton('digital')"
+                                                                    onchange="enableApplyButtonDigital('digital')"
                                                                     class="master-toggle">
                                                                 <span class="slider round"></span>
                                                             </label>
@@ -301,7 +301,7 @@
                                                                         <div><span class="rupee">₹</span></div>
                                                                         <input value="1000" type="text"
                                                                             class="limit-input" id="new-limit-pin"
-                                                                            onchange="enableApplyButton('digital')" required
+                                                                            onchange="enableApplyButtonDigital('digital')" required
                                                                             onkeypress="return isNumber(event)" />
                                                                     </div>
                                                                 </div>
@@ -335,7 +335,7 @@
                                                                 <div class="limit ">
                                                                     <div class="value input flex flex-ac">
                                                                         <input value=99 type="text" class="limit-input"
-                                                                            onchange="enableApplyButton('digital')"
+                                                                            onchange="enableApplyButtonDigital('digital')"
                                                                             pattern="([1-9]|[1-8][0-9]|9[0-9])"
                                                                             onkeypress="return isNumber(event)"
                                                                             required />
@@ -353,7 +353,7 @@
                                                     Apply
                                                 </button>
                                                 <button class="cancel-changes tkn-button secondary"
-                                                    onclick="openExitWithoutSaveModal()">
+                                                    onclick="cancelChangesDigital()">
                                                     Cancel
                                                 </button>
                                                 <!-- <a class="sbi-link underlined cancel-changes"

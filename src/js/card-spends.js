@@ -1,3 +1,8 @@
+var changesMadeCard = false;
+
+/**
+ * Establish master slave relationship between card spends switches
+ */
 function onChangeCardMaster(umbrellaClass) {
     var slaveSelector = '.tkn-tab-card .'+umbrellaClass+ ' .slave', masterToggleSelector = '.tkn-tab-card .'+umbrellaClass+' .master-toggle';
     var masterToggle = getElement(masterToggleSelector);
@@ -66,10 +71,45 @@ function onChangeSlave(event, selector, umbrellaClass){
     }
 }
 
+function cancelChangesCard(){
+    if(!changesMadeCard){
+        window.location = 'tkn-card-wallet-dashboard.html';
+    }else {
+        openExitWithoutSaveModal();
+    }
+}
+
+
+// 
+ function enableApplyButtonCard(screen){
+    changesMadeCard = true;
+    var buttons = document.querySelectorAll('.tkn-button-group.' + screen + ' .apply-digital');
+    for(var i=0; i<buttons.length; i++){
+        buttons[i].removeAttribute("disabled");
+    }
+    var cancelLinks = document.querySelectorAll('.tkn-button-group.' + screen + ' .cancel-changes');
+    for(var i=0; i<cancelLinks.length; i++){
+        cancelLinks[i].classList.remove('tkn-disabled');
+        cancelLinks[i].removeAttribute("disabled");
+    }
+}
+
+function disableApplyButtonCard(screen){
+    var buttons = document.querySelectorAll('.tkn-button-group.' + screen + ' .apply-digital');
+    for(var i=0; i<buttons.length; i++){
+        buttons[i].setAttribute("disabled", true);
+    }
+    /* var cancelLinks = document.querySelectorAll('.tkn-button-group.' + screen + ' .cancel-changes');
+    for(var i=0; i<cancelLinks.length; i++){
+        cancelLinks[i].classList.add('tkn-disabled');
+        cancelLinks[i].setAttribute("disabled", true);
+    } */
+}
+
 function init(){
     onChangeCardMaster('all-online', 'desktop'); onChangeCardMaster('all-online', 'mobile');
     onChangeCardMaster('all-international', 'desktop'); onChangeCardMaster('all-international', 'mobile');
-    disableApplyButton('card');
+    disableApplyButtonCard('card');
     inputFocus('.limit-input');
 }
 
